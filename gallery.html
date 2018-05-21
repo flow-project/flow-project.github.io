@@ -11,7 +11,7 @@
     <title>Gallery</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
@@ -54,39 +54,41 @@
     <main role="main" class="container">
 
       <div class="starter-template">
-        <h1>Flow: Results</h1>
+        <h1>Results</h1>
         <p class="lead">Below we display some videos and results from
          our work and publications.</p>
       </div>
       <div class="container">
         <div class="row">
-          <h1> Shockwave Dissipation</h1>
+          <h2>Shockwave Dissipation</h2>
         </div>
         <div class="row">
-          <p class="lead"> In this work, inspired by the Sugiyama experiment (cite)
-          demonstrating spontaneous formation of traffic shockwaves, and experiments
-          demonstrating the ability of AVs to suppress shockwaves (cite),
-          we investigated the ability of reinforcement learning to train
-          an optimal shockwave dissipating controller. </p>
-        </div>
-        <div class="row">
-          <p class="lead"> By training on rings of randomly varied size,
-          and using a neural net with memory, we were able to learn a controller
-          that both reached the theoretical optimum
-          and generalized outside of the training distribution. </p>
-        </div>
-        <div class="row">
-          <div class="col-4">
+          <div class="col">
+            <p> In this work, inspired by the Sugiyama experiment (cite)
+            demonstrating spontaneous formation of traffic shockwaves, and experiments
+            demonstrating the ability of AVs to suppress shockwaves (cite),
+            we investigated the ability of reinforcement learning to train
+            an optimal shockwave dissipating controller. </p>
+
+            <p> By training on rings of randomly varied size,
+            and using a neural net with memory, we were able to learn a controller
+            that both was optimal and generalized outside of the training distribution. </p>
+
+            <p>The figure at right shows a diagram of the experiment, 
+            in which a single AV tries to stabilize an unstable ring.</p>
+          </div>
+          <div class="col-3">
             <figure>
-              <img src="figures/experiments/ring-road-scenario.png" class="img-fluid"
+              <img src="figures/experiments/ring-road-scenario.png" class="img-fluid result"
               alt="ring-scenario">
-              <figcaption> Diagram of the bottleneck experiment.
-              A single AV tries to stabilize an unstable ring. </figcaption>
+              <figcaption>  </figcaption>
             </figure>
           </div>
-          <div class="col-4">
+        </div>
+        <div class="row">
+          <div class="col">
             <figure>
-              <img src="figures/experiments/rings.png" class="img-fluid" 
+              <img src="figures/experiments/rings.png" class="img-fluid result" 
               alt="Bottleneck control design">
               <figcaption> (A). Average system velocity before and after 
               the controller is turned on.  (B). Space-time diagram
@@ -95,9 +97,9 @@
               autonomous vehicle (cite DAN). </figcaption>
             </figure>
           </div>
-          <div class="col-4">
+          <div class="col">
             <figure>
-              <img src="figures/experiments/speed_density.png" class="img-fluid"
+              <img src="figures/experiments/speed_density.png" class="img-fluid result"
               alt="ring-scenario">
               <figcaption> Comparisons of average system velocity under
               different control strategies, with the theoretical
@@ -107,6 +109,7 @@
             </figure>
           </div>
         </div>
+
         <div class="row">
           <div class="col-6">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Lggtw9AOH0A?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -120,9 +123,11 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/7OU0chhWcxA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
-
+        
+        <hr>
+        
         <div class="row">
-          <h1> Intersection control</h1>
+          <h2>Intersection control</h2>
         </div>
         <div class="row">
           <p class="lead"> In this work, we demonstrated the ability
@@ -139,7 +144,7 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Figure8-scenario.png" class="img-fluid" 
+              <img src="figures/experiments/Figure8-scenario.png" class="img-fluid result" 
               alt="Intersection-scenario.">
               <figcaption> Diagram of the intersection experiment. 
               14 vehicles trying to cross an intersection. </figcaption>
@@ -147,7 +152,7 @@
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Figure_8_0_rl_cistar_journal.png" class="img-fluid" 
+              <img src="figures/experiments/Figure_8_0_rl_cistar_journal.png" class="img-fluid result" 
               alt="Intersection-scenario.">
               <figcaption> Space-time diagram of the intersection experiment. 
               14 vehicles trying to cross an intersection with no control. </figcaption>
@@ -157,7 +162,7 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Figure_8_1_rl_cistar_journal.png" class="img-fluid" 
+              <img src="figures/experiments/Figure_8_1_rl_cistar_journal.png" class="img-fluid result" 
               alt="Intersection-scenario.">
               <figcaption> Space-time diagram of the intersection experiment. 
               One of the vehicles is autonomous. </figcaption>
@@ -165,7 +170,7 @@
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Figure_8_14_rl_cistar_journal.png" class="img-fluid" 
+              <img src="figures/experiments/Figure_8_14_rl_cistar_journal.png" class="img-fluid result" 
               alt="Intersection-scenario.">
               <figcaption> Space-time diagram of the intersection experiment. 
               All the vehicles are autonomous. </figcaption>
@@ -184,20 +189,22 @@
         </div>
         
 
+        <hr>
+
         <div class="row">
-          <h1> On-ramp shockwave dissipation</h1>
+          <h2>On-ramp shockwave dissipation</h2>
         </div>
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Selection_118.png" class="img-fluid" 
+              <img src="figures/experiments/Selection_118.png" class="img-fluid result" 
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Selection_119.png" class="img-fluid" 
+              <img src="figures/experiments/Selection_119.png" class="img-fluid result" 
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
@@ -206,80 +213,82 @@
         <div class="row">
           <div class="col-4">
             <figure>
-              <img src="figures/experiments/Selection_113.png" class="img-fluid" 
+              <img src="figures/experiments/Selection_113.png" class="img-fluid result" 
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-4">
             <figure>
-              <img src="figures/experiments/merge-heat-map-rl-0_025.png" class="img-fluid"
+              <img src="figures/experiments/merge-heat-map-rl-0_025.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-4">
             <figure>
-              <img src="figures/experiments/merge-heat-map-rl-0_100.png" class="img-fluid"
-              alt="Bottleneck control design">
-              <figcaption> Control structure of the bottleneck </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-
-        <div class="row">
-          <h1> Bottleneck control</h1>
-        </div>
-
-        <div class="row">
-          <div class="col-6">
-            <figure>
-              <img src="figures/experiments/bottleneck_control.png" class="img-fluid"
-              alt="Bottleneck control design">
-              <figcaption> Control structure of the bottleneck </figcaption>
-            </figure>
-          </div>
-          <div class="col-6">
-            <figure>
-              <img src="figures/experiments/bottleneck_congestion.png" class="img-fluid"
-              alt="Bottleneck control design">
-              <figcaption> Control structure of the bottleneck </figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <figure>
-              <img src="figures/experiments/RLVAlineaBigAxes.png" class="img-fluid"
-              alt="Bottleneck control design">
-              <figcaption> Control structure of the bottleneck </figcaption>
-            </figure>
-          </div>
-          <div class="col-6">
-            <figure>
-              <img src="figures/experiments/uncontrolVRLBigAxes.png" class="img-fluid"
+              <img src="figures/experiments/merge-heat-map-rl-0_100.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
         </div>
 
+        <hr>
+
         <div class="row">
-          <h1> Impact of sorting</h1>
+          <h2>Bottleneck control</h2>
         </div>
+
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/multi-lane-ring-scenario.png" class="img-fluid"
+              <img src="figures/experiments/bottleneck_control.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/equivalent-state-multi-lane-platooning.png" class="img-fluid"
+              <img src="figures/experiments/bottleneck_congestion.png" class="img-fluid result"
+              alt="Bottleneck control design">
+              <figcaption> Control structure of the bottleneck </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <figure>
+              <img src="figures/experiments/RLVAlineaBigAxes.png" class="img-fluid result"
+              alt="Bottleneck control design">
+              <figcaption> Control structure of the bottleneck </figcaption>
+            </figure>
+          </div>
+          <div class="col-6">
+            <figure>
+              <img src="figures/experiments/uncontrolVRLBigAxes.png" class="img-fluid result"
+              alt="Bottleneck control design">
+              <figcaption> Control structure of the bottleneck </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <h2>Impact of sorting</h2>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <figure>
+              <img src="figures/experiments/multi-lane-ring-scenario.png" class="img-fluid result"
+              alt="Bottleneck control design">
+              <figcaption> Control structure of the bottleneck </figcaption>
+            </figure>
+          </div>
+          <div class="col-6">
+            <figure>
+              <img src="figures/experiments/equivalent-state-multi-lane-platooning.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Effect of sorting on 6 rl and 38 human </figcaption>
             </figure>
@@ -288,7 +297,7 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/effect-of-sorting-full-autonomy.png" class="img-fluid"
+              <img src="figures/experiments/effect-of-sorting-full-autonomy.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Effect of sorting on 44 RL vehicles </figcaption>
             </figure>
@@ -306,9 +315,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
 </html>
 

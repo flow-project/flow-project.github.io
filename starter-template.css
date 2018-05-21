@@ -9,3 +9,14 @@ body {
 .headshot {
 	max-height: 200px;
 }
+
+.affiliation {
+	display: inline-block;
+	/*font-size: 12px;*/
+	line-height: 1.4;
+	font-style: italic;
+}
+
+.result {
+	max-height: 400px;
+}
