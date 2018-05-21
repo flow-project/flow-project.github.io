@@ -16,3 +16,7 @@ body {
 	line-height: 1.4;
 	font-style: italic;
 }
+
+.result {
+	max-height: 400px;
+}

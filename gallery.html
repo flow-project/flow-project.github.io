@@ -63,29 +63,32 @@
           <h2>Shockwave Dissipation</h2>
         </div>
         <div class="row">
-          <p> In this work, inspired by the Sugiyama experiment (cite)
-          demonstrating spontaneous formation of traffic shockwaves, and experiments
-          demonstrating the ability of AVs to suppress shockwaves (cite),
-          we investigated the ability of reinforcement learning to train
-          an optimal shockwave dissipating controller. </p>
-        </div>
-        <div class="row">
-          <p> By training on rings of randomly varied size,
-          and using a neural net with memory, we were able to learn a controller
-          that both was optimal and generalized outside of the training distribution. </p>
-        </div>
-        <div class="row">
-          <div class="col-4">
+          <div class="col">
+            <p> In this work, inspired by the Sugiyama experiment (cite)
+            demonstrating spontaneous formation of traffic shockwaves, and experiments
+            demonstrating the ability of AVs to suppress shockwaves (cite),
+            we investigated the ability of reinforcement learning to train
+            an optimal shockwave dissipating controller. </p>
+
+            <p> By training on rings of randomly varied size,
+            and using a neural net with memory, we were able to learn a controller
+            that both was optimal and generalized outside of the training distribution. </p>
+
+            <p>The figure at right shows a diagram of the experiment, 
+            in which a single AV tries to stabilize an unstable ring.</p>
+          </div>
+          <div class="col-3">
             <figure>
-              <img src="figures/experiments/ring-road-scenario.png" class="img-fluid"
+              <img src="figures/experiments/ring-road-scenario.png" class="img-fluid result"
               alt="ring-scenario">
-              <figcaption> Diagram of the bottleneck experiment.
-              A single AV tries to stabilize an unstable ring. </figcaption>
+              <figcaption>  </figcaption>
             </figure>
           </div>
-          <div class="col-4">
+        </div>
+        <div class="row">
+          <div class="col">
             <figure>
-              <img src="figures/experiments/rings.png" class="img-fluid" 
+              <img src="figures/experiments/rings.png" class="img-fluid result" 
               alt="Bottleneck control design">
               <figcaption> (A). Average system velocity before and after 
               the controller is turned on.  (B). Space-time diagram
@@ -93,9 +96,9 @@
               of a real-world ring control experiment (cite DAN). </figcaption>
             </figure>
           </div>
-          <div class="col-4">
+          <div class="col">
             <figure>
-              <img src="figures/experiments/speed_density.png" class="img-fluid"
+              <img src="figures/experiments/speed_density.png" class="img-fluid result"
               alt="ring-scenario">
               <figcaption> Comparisons of average system velocity under
               different control strategies, with the theoretical
@@ -106,7 +109,7 @@
           </div>
         </div>
         
-        <br>
+        <hr>
         
         <div class="row">
           <h2>Intersection control</h2>
@@ -114,7 +117,7 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Figure8-scenario.png" class="img-fluid" 
+              <img src="figures/experiments/Figure8-scenario.png" class="img-fluid result" 
               alt="Intersection-scenario.">
               <figcaption> Diagram of the toy intersection experiment. 
               14 vehicles trying to cross an intersection. </figcaption>
@@ -122,7 +125,7 @@
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Figure_8_0_rl_cistar_journal.png" class="img-fluid" 
+              <img src="figures/experiments/Figure_8_0_rl_cistar_journal.png" class="img-fluid result" 
               alt="Intersection-scenario.">
               <figcaption> Diagram of the toy intersection experiment. 
               14 vehicles trying to cross an intersection. </figcaption>
@@ -132,7 +135,7 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Figure_8_1_rl_cistar_journal.png" class="img-fluid" 
+              <img src="figures/experiments/Figure_8_1_rl_cistar_journal.png" class="img-fluid result" 
               alt="Intersection-scenario.">
               <figcaption> Diagram of the toy intersection experiment. 
               14 vehicles trying to cross an intersection. </figcaption>
@@ -140,7 +143,7 @@
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Figure_8_14_rl_cistar_journal.png" class="img-fluid" 
+              <img src="figures/experiments/Figure_8_14_rl_cistar_journal.png" class="img-fluid result" 
               alt="Intersection-scenario.">
               <figcaption> Diagram of the toy intersection experiment. 
               14 vehicles trying to cross an intersection. </figcaption>
@@ -148,7 +151,7 @@
           </div>
         </div>
 
-        <br>
+        <hr>
 
         <div class="row">
           <h2>On-ramp shockwave dissipation</h2>
@@ -156,14 +159,14 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Selection_118.png" class="img-fluid" 
+              <img src="figures/experiments/Selection_118.png" class="img-fluid result" 
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/Selection_119.png" class="img-fluid" 
+              <img src="figures/experiments/Selection_119.png" class="img-fluid result" 
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
@@ -172,29 +175,28 @@
         <div class="row">
           <div class="col-4">
             <figure>
-              <img src="figures/experiments/Selection_113.png" class="img-fluid" 
+              <img src="figures/experiments/Selection_113.png" class="img-fluid result" 
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-4">
             <figure>
-              <img src="figures/experiments/merge-heat-map-rl-0_025.png" class="img-fluid"
+              <img src="figures/experiments/merge-heat-map-rl-0_025.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-4">
             <figure>
-              <img src="figures/experiments/merge-heat-map-rl-0_100.png" class="img-fluid"
+              <img src="figures/experiments/merge-heat-map-rl-0_100.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
         </div>
-      </div>
 
-      <br>
+        <hr>
 
         <div class="row">
           <h2>Bottleneck control</h2>
@@ -202,14 +204,14 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/bottleneck_control.png" class="img-fluid"
+              <img src="figures/experiments/bottleneck_control.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/bottleneck_congestion.png" class="img-fluid"
+              <img src="figures/experiments/bottleneck_congestion.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
@@ -218,21 +220,21 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/RLVAlineaBigAxes.png" class="img-fluid"
+              <img src="figures/experiments/RLVAlineaBigAxes.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/uncontrolVRLBigAxes.png" class="img-fluid"
+              <img src="figures/experiments/uncontrolVRLBigAxes.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
         </div>
 
-        <br>
+        <hr>
 
         <div class="row">
           <h2>Impact of sorting</h2>
@@ -240,14 +242,14 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/multi-lane-ring-scenario.png" class="img-fluid"
+              <img src="figures/experiments/multi-lane-ring-scenario.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/equivalent-state-multi-lane-platooning.png" class="img-fluid"
+              <img src="figures/experiments/equivalent-state-multi-lane-platooning.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Effect of sorting on 6 rl and 38 human </figcaption>
             </figure>
@@ -256,7 +258,7 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/effect-of-sorting-full-autonomy.png" class="img-fluid"
+              <img src="figures/experiments/effect-of-sorting-full-autonomy.png" class="img-fluid result"
               alt="Bottleneck control design">
               <figcaption> Effect of sorting on 44 RL vehicles </figcaption>
             </figure>
