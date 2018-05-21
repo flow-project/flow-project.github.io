@@ -63,7 +63,19 @@
           <h1> Shockwave Dissipation</h1>
         </div>
         <div class="row">
-          <div class="col-6">
+          <p class="lead"> In this work, inspired by the Sugiyama experiment (cite)
+          demonstrating spontaneous formation of traffic shockwaves, and experiments
+          demonstrating the ability of AVs to suppress shockwaves (cite),
+          we investigated the ability of reinforcement learning to train
+          an optimal shockwave dissipating controller. </p>
+        </div>
+        <div class="row">
+          <p class="lead"> By training on rings of randomly varied size,
+          and using a neural net with memory, we were able to learn a controller
+          that both was optimal and generalized outside of the training distribution. </p>
+        </div>
+        <div class="row">
+          <div class="col-4">
             <figure>
               <img src="figures/experiments/ring-road-scenario.png" class="img-fluid"
               alt="ring-scenario">
@@ -71,7 +83,7 @@
               A single AV tries to stabilize an unstable ring. </figcaption>
             </figure>
           </div>
-          <div class="col-6">
+          <div class="col-4">
             <figure>
               <img src="figures/experiments/rings.png" class="img-fluid" 
               alt="Bottleneck control design">
@@ -79,6 +91,17 @@
               the controller is turned on.  (B). Space-time diagram
               of the evolution of shockwaves in the system. (C). Illustration 
               of a real-world ring control experiment (cite DAN). </figcaption>
+            </figure>
+          </div>
+          <div class="col-4">
+            <figure>
+              <img src="figures/experiments/speed_density.png" class="img-fluid"
+              alt="ring-scenario">
+              <figcaption> Comparisons of average system velocity under
+              different control strategies, with the theoretical
+              optimum as a benchmark. The GRU (memory) controller both reached
+              the optimal on the training set, shown in white, and generalized
+              out of distribution to the densities showh in grey. </figcaption>
             </figure>
           </div>
         </div>
@@ -143,16 +166,23 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-6">
+          <div class="col-4">
             <figure>
               <img src="figures/experiments/Selection_113.png" class="img-fluid" 
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
-          <div class="col-6">
+          <div class="col-4">
             <figure>
-              <img src="figures/experiments/Selection_113.png" class="img-fluid" 
+              <img src="figures/experiments/merge-heat-map-rl-0_025.png" class="img-fluid"
+              alt="Bottleneck control design">
+              <figcaption> Control structure of the bottleneck </figcaption>
+            </figure>
+          </div>
+          <div class="col-4">
+            <figure>
+              <img src="figures/experiments/merge-heat-map-rl-0_100.png" class="img-fluid"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
@@ -167,14 +197,14 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/bottleneck_control.png" class="img-fluid" 
+              <img src="figures/experiments/bottleneck_control.png" class="img-fluid"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
           </div>
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/uncontrolVRLBigAxes.png" class="img-fluid" 
+              <img src="figures/experiments/bottleneck_congestion.png" class="img-fluid"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
             </figure>
@@ -183,9 +213,45 @@
         <div class="row">
           <div class="col-6">
             <figure>
-              <img src="figures/experiments/RLVAlineaBigAxes.png" class="img-fluid" 
+              <img src="figures/experiments/RLVAlineaBigAxes.png" class="img-fluid"
               alt="Bottleneck control design">
               <figcaption> Control structure of the bottleneck </figcaption>
+            </figure>
+          </div>
+          <div class="col-6">
+            <figure>
+              <img src="figures/experiments/uncontrolVRLBigAxes.png" class="img-fluid"
+              alt="Bottleneck control design">
+              <figcaption> Control structure of the bottleneck </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="row">
+          <h1> Impact of sorting</h1>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <figure>
+              <img src="figures/experiments/multi-lane-ring-scenario.png" class="img-fluid"
+              alt="Bottleneck control design">
+              <figcaption> Control structure of the bottleneck </figcaption>
+            </figure>
+          </div>
+          <div class="col-6">
+            <figure>
+              <img src="figures/experiments/equivalent-state-multi-lane-platooning.png" class="img-fluid"
+              alt="Bottleneck control design">
+              <figcaption> Effect of sorting on 6 rl and 38 human </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <figure>
+              <img src="figures/experiments/effect-of-sorting-full-autonomy.png" class="img-fluid"
+              alt="Bottleneck control design">
+              <figcaption> Effect of sorting on 44 RL vehicles </figcaption>
             </figure>
           </div>
         </div>
