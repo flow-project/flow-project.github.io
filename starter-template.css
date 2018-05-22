@@ -1,22 +1,23 @@
 body {
   padding-top: 5rem;
 }
+
 .starter-template {
   padding: 3rem 1.5rem;
   text-align: center;
 }
 
 .headshot {
-	max-height: 200px;
+  max-height: 200px;
 }
 
 .affiliation {
-	display: inline-block;
-	/*font-size: 12px;*/
-	line-height: 1.4;
-	font-style: italic;
+  display: inline-block;
+  /*font-size: 12px;*/
+  line-height: 1.4;
+  font-style: italic;
 }
 
 .result {
-	max-height: 400px;
+  max-height: 400px;
 }
