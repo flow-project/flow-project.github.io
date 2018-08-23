@@ -49,8 +49,9 @@
     </div>
   </nav>
   <main role="main" class="container">
-    <div class="starter-template">
-      <h1>Flow: a deep reinforcement learning framework for traffic</h1>
+    <div class="starter-template" style="background:transparent url('figures/img/dark_highway_blur_crop.png') no-repeat center center /cover">
+      <font color="white">
+      <h1>Flow: a deep reinforcement learning framework for mixed-autonomy traffic</h1>
       <p class="lead">
         Flow leverages state-of-the-art deep RL libraries and the open-source microsimulator, SUMO, enabling the use of reinforcement learning to design and train controllers in traffic settings.
         <!-- [expand a bit more?] -->
@@ -69,22 +70,121 @@
         <p>
           Flow was developed at the University of California, Berkeley.
         </p>
-         </div>
+      </font>
+    </div>
+      <h1>Results</h1>
+      <p class="lead">Successful controllers developed with Flow. For more, check out our<a style="display:inline" class="nav-link" href="gallery.html">gallery</a>
+      </p> 
 
-        <div class="row">
-          <div class="col-xl-6">
-            <figure>
-              <img src="figures/experiments/flow_diag_gauss.png" class="img-fluid result" alt="Flow diagram">
-              <figcaption class="small text-center"> Diagram of the flow training and evaluation process. </figcaption>
-            </figure>
-          </div>
-           <div class="col-xl-6">
-            <figure>
-              <img src="figures/experiments/flow_process_diagram.png" class="img-fluid result" alt="Flow diagram">
-              <figcaption class="small text-center"> Detailed diagram of the steps of the flow process. </figcaption>
-            </figure>
+    <div class="container">
+      <div class="row">
+        <!-- should these be centered? -->
+        <h2>Phantom Shockwave Dissipation on a Ring</h2>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/Lggtw9AOH0A?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/D0lNWWK3s9s?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
+      <hr>
+      <br>
+      <div class="row">
+        <h2 class="text-center">Intersection control</h2>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/Z6QltFAEDeQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/SoA_7fPJEG8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div class="row">
+        <h2 class="text-center">On-ramp shockwave dissipation</h2>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/RPBAZH3Z0Sk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/r-sBz1VOtp4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div class="row">
+        <h2 class="text-center">Bottleneck control</h2>
+      </div>
+      <div class="row">
+        <p class="lead"> Inspired by the rapid decrease in lanes on the San Francisco-Oakland Bay Bridge, we study a bottleneck that merges from four lanes down to two to one. </p>
+      </div>
+      <div class="row">
+        <p class="lead"> We demonstrate that the AVs are able to learn a strategy that increases the effective outflow at high inflows, and performs competitively with ramp metering. </p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <figure>
+            <img src="figures/experiments/bottleneck_control.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Control structure of the bottleneck. Scale of segments are distorted for visualization. </figcaption>
+          </figure>
+        </div>
+        <div class="col-lg-6">
+          <figure>
+            <img src="figures/experiments/bottleneck_congestion.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Without control, congestion rapidly forms in the bottleneck.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <figure>
+            <img src="figures/experiments/uncontrolVRLBigAxes.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Control structure of the bottleneck; at high inflows the outflow is improved by 25%. </figcaption>
+          </figure>
+        </div>
+        <div class="col-lg-6">
+          <figure>
+            <img src="figures/experiments/RLVAlineaBigAxes.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Comparison of inflow, outflow curves for AV control vs. ramp metering. At high inflows they perform comparably. </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div class="row">
+        <h2 class="text-center">Impact of sorting</h2>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <figure>
+            <img src="figures/experiments/multi-lane-ring-scenario.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Control structure of the bottleneck </figcaption>
+          </figure>
+        </div>
+        <div class="col-xl-6">
+          <figure>
+            <img src="figures/experiments/equivalent-state-multi-lane-platooning.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Effect of sorting on 6 rl and 38 human </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <figure>
+            <img src="figures/experiments/effect-of-sorting-full-autonomy.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Effect of sorting on 44 RL vehicles </figcaption>
+          </figure>
+        </div>
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/92QhebYV1zU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
 
 
     </main><!-- /.container -->
