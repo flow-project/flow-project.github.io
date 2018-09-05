@@ -15,11 +15,12 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124124439-1"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-124124439-1');
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124124439-1');
   </script>
 </head>
 
@@ -60,12 +61,12 @@
   <main role="main" class="container">
     <div class="starter-template" style="background:transparent url('figures/img/dark_highway_blur_crop.png') no-repeat center center /cover">
       <font color="white">
-      <h1>Flow: a deep reinforcement learning framework for mixed-autonomy traffic</h1>
-      <p class="lead">
-        Flow leverages state-of-the-art deep RL libraries and the open-source microsimulator, SUMO, enabling the use of reinforcement learning to design and train controllers in traffic settings.
-        <!-- [expand a bit more?] -->
-      </p>
-      <!-- <h3>Mixed-Autonomy Traffic: The Near Future</h3>
+        <h1>Flow: a deep reinforcement learning framework for mixed-autonomy traffic</h1>
+        <p class="lead">
+          Flow leverages state-of-the-art deep RL libraries and the open-source microsimulator, SUMO, enabling the use of reinforcement learning to design and train controllers in traffic settings.
+          <!-- [expand a bit more?] -->
+        </p>
+        <!-- <h3>Mixed-Autonomy Traffic: The Near Future</h3>
         [some pictures]
 
         <h3>Deep Reinforcement Learning</h3>
@@ -75,16 +76,32 @@
         [a video?]
 
         <br> <br> -->
-
         <p>
           Flow was developed at the University of California, Berkeley.
         </p>
       </font>
     </div>
-      <h1>Results</h1>
-      <p class="lead">Successful controllers developed with Flow. For more details check out our<a style="display:inline" class="nav-link" href="gallery.html">gallery</a>
-      </p> 
-
+    <div class="container">
+      <br />
+      <div class="row">
+        <div class="col-xl-6">
+          <figure>
+            <img class="img-fluid result" alt="Flow process diagram" style="display:block; margin:auto" src="figures/experiments/flow_process_diagram_2.png">
+            <figcaption class="small text-center"> Detailed diagram of the steps of the flow process. </figcaption> 
+          </figure>
+        </div>
+        <div class="col-xl-6">
+          <figure>
+            <img class="img-fluid result" alt="Flow training process" style="display:block; margin:auto" src="figures/experiments/flow_diag_gauss_2.png"></p>
+            <figcaption class="small text-center"> Diagram of the Flow training and evaluation process. </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <!-- <p ><img src="figures/experiments/flow_process_diagram_2.png"><img src="figures/experiments/flow_diag_gauss_2.png"></p> -->
+    <h1>Results</h1>
+    <p class="lead">Successful controllers developed with Flow. For more details check out our<a style="display:inline" class="nav-link" href="gallery.html">gallery</a>
+    </p>
     <div class="container">
       <div class="row">
         <!-- should these be centered? -->
@@ -113,7 +130,7 @@
       </div>
       <hr>
       <br>
-            <div class="row">
+      <div class="row">
         <h2 class="text-center">Bottleneck control</h2>
       </div>
       <div class="row">
@@ -164,11 +181,9 @@
         </div>
       </div>
     </div>
-
-
-    </main><!-- /.container -->
-
-    <!-- Bootstrap core JavaScript
+  </main>
+  <!-- /.container -->
+  <!-- Bootstrap core JavaScript
       <p>
         Flow was developed at the University of California, Berkeley.
       </p>
