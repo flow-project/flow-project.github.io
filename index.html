@@ -15,11 +15,12 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124124439-1"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-124124439-1');
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124124439-1');
   </script>
 </head>
 
@@ -58,11 +59,11 @@
     </div>
   </nav>
   <main role="main" class="container">
-    <div class="starter-template" style="background:transparent url('figures/img/dark_highway_blur_crop.png') no-repeat center center /cover">
-      <font color="white">
-      <h1>Flow: a deep reinforcement learning framework for mixed-autonomy traffic</h1>
+    <!-- <div class="starter-template" style="background:transparent url('figures/img/dark_highway_blur_crop.png') no-repeat center center /cover"> -->
+    <div class="starter-template">
+      <h1>Flow: a deep reinforcement learning framework for mixed autonomy traffic</h1>
       <p class="lead">
-        Flow leverages state-of-the-art deep RL libraries and the open-source microsimulator, SUMO, enabling the use of reinforcement learning to design and train controllers in traffic settings.
+        Flow leverages state-of-the-art deep reinforcement learning (RL) libraries and microsimulator SUMO, enabling the use of RL to design, train, and evaluate controllers in traffic settings. Flow is open source.
         <!-- [expand a bit more?] -->
       </p>
       <!-- <h3>Mixed-Autonomy Traffic: The Near Future</h3>
@@ -75,20 +76,43 @@
         [a video?]
 
         <br> <br> -->
-
-        <p>
-          Flow was developed at the University of California, Berkeley.
-        </p>
-      </font>
+      <p>
+        Flow is developed at the University of California, Berkeley.
+      </p>
     </div>
-      <h1>Results</h1>
-      <p class="lead">Successful controllers developed with Flow. For more details check out our <a href="gallery.html">gallery</a>.
-      </p> 
-
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <figure>
+            <img class="img-fluid frontpageimg" alt="Flow process diagram" style="display:block; margin:auto" src="figures/experiments/flow_process_diagram_2.png">
+            <figcaption class="small text-center">The various components of Flow.</figcaption>
+          </figure>
+        </div>
+        <div class="col-xl-6">
+          <figure>
+            <img class="img-fluid frontpageimg" alt="Flow training process" style="display:block; margin:auto" src="figures/experiments/flow_diag_gauss_2.png">
+            <figcaption class="small text-center">The Flow training and evaluation process.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <h1>Results</h1>
+    <p class="lead">
+      The following are successful controllers developed with Flow. For more details visit our <a href="gallery.html">gallery</a>.
+    </p>
     <div class="container">
       <div class="row">
         <!-- should these be centered? -->
-        <h2>Phantom Shockwave Dissipation on a Ring</h2>
+        <h2>Phantom shockwave dissipation on a ring</h2>
+      </div>
+      <div class="row">
+        <p>
+        Inspired by the famous <a href="https://www.youtube.com/watch?v=7wm-pZp_mi0">2008 Sugiyama experiment</a> demonstrating spontaneous formation of traffic shockwaves (reproduced on the left video), and a <a href="https://www.youtube.com/watch?v=2mBjYZTeaTc">2017 field study</a> demonstrating the ability of AVs to suppress shockwaves, we investigated the ability of reinforcement learning to train an <b>optimal</b> shockwave dissipating controller.
+        </p>
+        <p>
+          In the right video, we learn a controller (policy) for one out of 22 vehicles. By training on ring roads of varying lengths, and using a neural network policy with memory, we were able to learn a controller that both was optimal (in terms of average system velocity) and generalized outside of the training distribution.
+        </p>
       </div>
       <div class="row">
         <div class="col-xl-6">
@@ -99,9 +123,16 @@
         </div>
       </div>
       <hr>
-      <br>
       <div class="row">
         <h2 class="text-center">Intersection control</h2>
+      </div>
+      <div class="row">
+        <p>
+          We demonstrated also the ability of a single autonomous vehicle to control the relative spacing of vehicles following behind it to create an optimal merge at an intersection.
+        </p>
+        <p>
+          As can be seen in the videos, without any AVs, the vehicles are stopped at the intersection by vehicles in the other direction; we show that even at low penetration rates, the autonomous vehicle "bunches" all of the other vehicles to avoid the intersection, resulting in a huge speed improvement.
+        </p>
       </div>
       <div class="row">
         <div class="col-xl-6">
@@ -112,15 +143,14 @@
         </div>
       </div>
       <hr>
-      <br>
-            <div class="row">
+      <div class="row">
         <h2 class="text-center">Bottleneck control</h2>
       </div>
       <div class="row">
-        <p class="lead"> Inspired by the rapid decrease in lanes on the San Francisco-Oakland Bay Bridge, we study a bottleneck that merges from four lanes down to two to one. </p>
+        <p> Inspired by the rapid decrease in lanes on the San Francisco-Oakland Bay Bridge, we study a bottleneck that merges from four lanes down to two to one. </p>
       </div>
       <div class="row">
-        <p class="lead"> We demonstrate that the AVs are able to learn a strategy that increases the effective outflow at high inflows, and performs competitively with ramp metering. </p>
+        <p> We demonstrate that the AVs are able to learn a strategy that increases the effective outflow at high inflows, and performs competitively with ramp metering. </p>
       </div>
       <div class="row">
         <div class="col-lg-6">
@@ -156,6 +186,14 @@
         <h2 class="text-center">On-ramp shockwave dissipation</h2>
       </div>
       <div class="row">
+        <p>
+          We demonstrate the ability of shockwave dissipation, previously demonstrated on a ring to scale to an actual highway situation. Vehicles travelling on a highway are perturbed by an aggressive on-ramp merge that the autonomous vehicle needs to dissipate.
+        </p>
+        <p>
+          As can be seen in the videos, the autonomous vehicle learns to slow its following vehicles to either avoid the perturbation or smooth its effects.
+        </p>
+      </div>
+      <div class="row">
         <div class="col-xl-6">
           <iframe width="533" height="300" src="https://www.youtube.com/embed/RPBAZH3Z0Sk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
@@ -164,11 +202,9 @@
         </div>
       </div>
     </div>
-
-
-    </main><!-- /.container -->
-
-    <!-- Bootstrap core JavaScript
+  </main>
+  <!-- /.container -->
+  <!-- Bootstrap core JavaScript
       <p>
         Flow was developed at the University of California, Berkeley.
       </p>

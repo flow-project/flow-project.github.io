@@ -21,3 +21,7 @@ body {
 .result {
   max-height: 400px;
 }
+
+.frontpageimg {
+	height: 350px;
+}
