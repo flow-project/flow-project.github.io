@@ -61,9 +61,9 @@
   <main role="main" class="container">
     <!-- <div class="starter-template" style="background:transparent url('figures/img/dark_highway_blur_crop.png') no-repeat center center /cover"> -->
     <div class="starter-template">
-      <h1>Flow: a deep reinforcement learning framework for mixed-autonomy traffic</h1>
+      <h1>Flow: a deep reinforcement learning framework for mixed autonomy traffic</h1>
       <p class="lead">
-        Flow leverages state-of-the-art deep RL libraries and the open-source microsimulator, SUMO, enabling the use of reinforcement learning to design and train controllers in traffic settings.
+        Flow leverages state-of-the-art deep reinforcement learning (RL) libraries and microsimulator SUMO, enabling the use of RL to design, train, and evaluate controllers in traffic settings. Flow is open source.
         <!-- [expand a bit more?] -->
       </p>
       <!-- <h3>Mixed-Autonomy Traffic: The Near Future</h3>
@@ -77,7 +77,7 @@
 
         <br> <br> -->
       <p>
-        Flow was developed at the University of California, Berkeley.
+        Flow is developed at the University of California, Berkeley.
       </p>
     </div>
     <div class="container">
@@ -99,20 +99,19 @@
     <hr>
     <h1>Results</h1>
     <p class="lead">
-      Successful controllers developed with Flow. For more details visit our <a href="gallery.html">gallery</a>.
+      The following are successful controllers developed with Flow. For more details visit our <a href="gallery.html">gallery</a>.
     </p>
-    <hr>
     <div class="container">
       <div class="row">
         <!-- should these be centered? -->
-        <h2>Phantom Shockwave Dissipation on a Ring</h2>
+        <h2>Phantom shockwave dissipation on a ring</h2>
       </div>
       <div class="row">
         <p>
-          In this work, inspired by the Sugiyama experiment (cite) demonstrating spontaneous formation of traffic shockwaves, and experiments demonstrating the ability of AVs to suppress shockwaves (cite), we investigated the ability of reinforcement learning to train an optimal shockwave dissipating controller.
+        Inspired by the famous <a href="https://www.youtube.com/watch?v=7wm-pZp_mi0">2008 Sugiyama experiment</a> demonstrating spontaneous formation of traffic shockwaves (reproduced on the left video), and a <a href="https://www.youtube.com/watch?v=2mBjYZTeaTc">2017 field study</a> demonstrating the ability of AVs to suppress shockwaves, we investigated the ability of reinforcement learning to train an <b>optimal</b> shockwave dissipating controller.
         </p>
         <p>
-          By training on rings of randomly varied size, and using a neural net with memory, we were able to learn a controller that both was optimal and generalized outside of the training distribution.
+          In the right video, we learn a controller (policy) for one out of 22 vehicles. By training on ring roads of varying lengths, and using a neural network policy with memory, we were able to learn a controller that both was optimal (in terms of average system velocity) and generalized outside of the training distribution.
         </p>
       </div>
       <div class="row">
@@ -129,10 +128,10 @@
       </div>
       <div class="row">
         <p>
-          In this work, we demonstrated the ability of a single autonomous vehicle to control the relative spacing of vehicles following behind it to create an optimal merge.
+          We demonstrated also the ability of a single autonomous vehicle to control the relative spacing of vehicles following behind it to create an optimal merge at an intersection.
         </p>
         <p>
-          As can be seen in the videos, at low penetration rates the autonomous vehicle bunches the vehicles to avoid the intersection, whereas at high penetrations the optimal solution becomes well timed merges.
+          As can be seen in the videos, without any AVs, the vehicles are stopped at the intersection by vehicles in the other direction; we show that even at low penetration rates, the autonomous vehicle "bunches" all of the other vehicles to avoid the intersection, resulting in a huge speed improvement.
         </p>
       </div>
       <div class="row">
@@ -188,7 +187,7 @@
       </div>
       <div class="row">
         <p>
-          In this work, we demonstrate the ability of shockwave dissipation, previously demonstrated on a ring to scale to an actual highway situation. Vehicles travelling on a highway are perturbed by an aggressive on-ramp merge that the autonomous vehicle needs to dissipate.
+          We demonstrate the ability of shockwave dissipation, previously demonstrated on a ring to scale to an actual highway situation. Vehicles travelling on a highway are perturbed by an aggressive on-ramp merge that the autonomous vehicle needs to dissipate.
         </p>
         <p>
           As can be seen in the videos, the autonomous vehicle learns to slow its following vehicles to either avoid the perturbation or smooth its effects.
