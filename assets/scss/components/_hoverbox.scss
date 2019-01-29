@@ -1,0 +1,23 @@
+//////////////////////
+// Elemnt hover
+//////////////////////
+.hoverbox {
+    position: relative;
+    .hoverbox-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        margin: 0 !important;
+    }
+    // .hover-box-content-initial{
+    //     // transition: opacity 0.2s ease-in-out;
+    // }
+    @include hover-focus { 
+        .hover-box-content-initial{ opacity: 0 }
+        .hoverbox-content { opacity: 1 } 
+    }
+}

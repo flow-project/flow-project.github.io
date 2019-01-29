@@ -1,0 +1,142 @@
+//////////////////////////////
+//
+// Dropdown semantic-ui
+//
+/////////////////////////////
+.ui.dropdown.selected, .ui.dropdown .menu .selected.item{
+    background-color: transparent;
+    color: map-get($colors, primary);
+}
+.ui.selection.dropdown{
+    font-family: $font-1;
+    border-radius: $radius-primary;
+    padding: $el-padding-3 $el-padding-5;
+    font-weight: 600;
+    font-size: modular-scale(-1);
+    letter-spacing: 0.01em;
+    transition: all 0.2s ease-in-out !important;
+    line-height: 1.5;
+    z-index: 3;
+    &[class*='background-']{
+        color: #fff;
+        &.visible{
+            .text:not(.default){
+                color: #fff;
+            }
+        }
+    }
+    &.visible{
+        > .text:not(.default){
+            font-weight: inherit;
+            color: map-get($colors, 1);
+        }
+    }
+    &.active{
+        border-color: map-get($colors, 6);
+        box-shadow: none;
+        .menu{
+            border-color: map-get($colors, 6);
+            box-shadow: none;
+        }
+        @include hover-focus{
+            border-color: map-get($colors, 4);
+            box-shadow: none;
+
+            .menu{
+                border-color: map-get($colors, 4);
+            }
+        }
+    }
+    > .search, > .delete, > .dropdown{
+        &.icon{
+            top: 50%;
+            margin: 0;
+            transform: translateY(-50%);
+            &:before{
+                content: '\f107';
+                font-family: 'FontAwesome';
+            }
+        }
+    }
+    .menu{
+        border-color: map-get($colors, 4); //Need Refactored
+        border-radius: 0 0 $radius-primary $radius-primary;
+        box-shadow: none;
+        padding: $el-padding-3 0;
+         > .item{
+            border-top: 1px solid #fff;
+            padding: $el-padding-3 $el-padding-5 !important;
+            font-weight: 600;
+            font-size: modular-scale(-1);
+            letter-spacing: 0.01em;
+            transition: all 0.2s ease-in-out !important;
+            line-height: 1.5;
+            @include hover-focus {
+                background: map-get($colors, 10);
+                color: map-get($colors, 1);
+            }
+        }
+    }
+
+    @include hover-focus {
+        border-color: map-get($colors, 4);
+        .menu{
+            border-color: map-get($colors, 4);
+        }
+    }
+
+    &.upward.visible{
+        border-color: map-get($colors, 6);
+        @include hover-focus {
+            border-color: map-get($colors, 4);
+            .menu{
+                border-color: map-get($colors, 4);
+            }
+        }
+        .menu{
+            box-shadow: none;
+            border-radius: $radius-primary $radius-primary 0 0;
+        }
+
+        @include hover-focus {
+            box-shadow: none;
+            .menu{
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+
+
+//////////////////////////////
+//
+// Accordion semantic-ui
+//
+//////////////////////////////
+.ui.styled.accordion{
+    &, .accordion{
+        border-radius: $radius-primary;
+        box-shadow: none;
+        border: 1px solid map-get($colors, 9);
+
+        .title{
+            color: map-get($colors, 1);
+            border-top: 1px solid map-get($colors, 9);
+            font-family: $font-1;
+            border-radius: $radius-primary;
+            padding: $el-padding-3;
+            font-weight: 600;
+            font-size: modular-scale(-1);
+            letter-spacing: 0.01em;
+            transition: all 0.2s ease-in-out !important;
+            line-height: 1.5;
+            .dropdown{ &.icon{ margin-right: 0.75em; } }
+            &.active{ color: map-get($colors, 1); }
+        }
+        .content{
+            padding: $el-padding-3 $el-padding-5;
+            color: map-get($colors, 2);
+        }
+    }
+}

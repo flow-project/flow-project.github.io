@@ -1,0 +1,220 @@
+/////////////////////////////
+//
+// Basic Form Style
+//
+/////////////////////////////
+@mixin input-feedback-variant($color){
+    .form-control{
+        $background : lighten($color, 30%);
+        //background-color: $background;
+
+        border-color: $color;
+        &:focus{ box-shadow: none; }
+    }
+    .form-control-feedback{ color: $color; }
+}
+.form-control-feedback{
+    right: 8px;
+    top: auto !important;
+    bottom: $el-padding-3;
+    height: auto !important;
+    line-height: 1.5 !important; 
+}
+
+.has-success{ @include input-feedback-variant(map-get($colors, success)); }
+.has-warning{ @include input-feedback-variant(map-get($colors, warning)); }
+.has-error{ @include input-feedback-variant(map-get($colors, danger)); }
+.form-control{
+    padding: $el-padding-3;
+    font-size: modular-scale(-1);
+    line-height: 1.5;
+    border-color: map-get($colors, 9);
+    box-shadow: none;
+    border-radius: $radius-primary;
+    background-color: map-get($colors, 11);
+    transition: all 0.2s ease-in-out;
+    height: auto;
+    &:focus{
+        background-color: #fff !important;
+        border-color: map-get($colors, primary);
+        box-shadow: none;
+    }
+    &.input-xs {
+        & + .form-control-feedback{ bottom: $el-padding-1; }
+        padding: $el-padding-1;
+        height: auto;
+    }
+    &.input-sm {
+        & + .form-control-feedback{ bottom: $el-padding-2; }
+        padding: $el-padding-2;
+        height: auto;
+    }
+    &.input-lg {
+        & + .form-control-feedback{
+            bottom: $el-padding-4;
+            font-size: modular-scale(0);
+        }
+        padding: $el-padding-4;
+        height: auto;
+        font-size: modular-scale(0);
+    }
+    &.active, &:active { box-shadow: none; }
+}
+label, legend{
+    font-size: modular-scale(-1);
+    font-weight: 600;
+}
+label, input, textarea, legend{ font-family: $font-1; }
+input[type='file']{ display: none; }
+.inputfile + label{
+    svg{
+        fill: currentColor;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+}
+
+
+
+/////////////////////////////
+// Checkbox iso toggle
+/////////////////////////////
+
+.ios-toggle{
+    &, &:active{
+        height:0;
+        width:0;
+        opacity: 0;
+    }
+    &:checked + .checkbox-label{
+        box-shadow:inset 0 0 0 20px map-get($colors, success), 0 0 0 1px map-get($colors, success);
+        &:before{
+            left:calc(100% - 32px);
+            box-shadow:0 0 0 1px transparent, -3px 0px 3px rgba(0,0,0,.1);
+        }
+        &:after{
+            content:attr(data-on);
+            left:70px;
+            width:32px;
+        }
+    }
+}
+
+.checkbox-label{
+    display: block;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 16px;
+    width: 70px;
+    height: 32px;
+    border-radius: $radius-capsule;
+    background-color: map-get($colors, 11);
+    cursor:pointer;
+    box-shadow: inset 0 0 0 0px map-get($colors, success), 0 0 0 1px map-get($colors, 9);
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 32px;
+        width: 32px;
+        top: 0px;
+        left: 0px;
+        right: auto;
+        background-color: white;
+        border-radius:  $radius-capsule;
+        box-shadow: 3px 0 3px rgba(0,0,0,.1), 0 0 0 1px map-get($colors, 9);
+        transition:  all 0.2s ease-in-out;
+    }
+    &:after{
+        content: attr(data-off);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -300px;
+        padding: 10px;
+        height: 100%;
+        width: 300px;
+        text-align: right;
+        color: map-get($colors, 2);
+        white-space: nowrap;
+    }
+    &.radius-square{
+        border-radius: $radius-primary;
+        &:before{ border-radius: $radius-primary; }
+    }
+}
+
+
+/////////////////////////
+// Checkbox and Radio
+/////////////////////////
+
+@mixin zinput-variant($type, $radius){
+   input[type='#{$type}']{
+        opacity: 0;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        cursor: pointer;
+        &:checked + label:before{ border-color: transparent; }
+        & + label:before{ border-radius: $radius; }
+    }     
+}
+
+.zinput{
+    position: relative;
+    label{
+        display: inline-block;
+        position: relative;
+        padding-left: $el-padding-5;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+        &:before{
+            width: 32px;
+            height: 32px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            position: absolute;
+            cursor: pointer;
+            content: '';
+            border: 1px solid map-get($colors, 9);
+            transition: box-shadow 0.2s ease-in-out;
+            box-shadow: inset 0 0 0 0px map-get($colors, success),0 0 0 0 map-get($colors, 9);
+        }
+    }
+    &.zradio{
+        padding: $el-padding-3 0;
+        @include zinput-variant('radio', $radius-capsule);
+        input[type='radio']{ &:checked + label:before{ box-shadow:inset 0 0 0 9px map-get($colors, success), 0 0 0 0 map-get($colors, success); } }
+    }
+    &.zcheckbox{
+        padding: $el-padding-3 0;
+        @include zinput-variant('checkbox', $radius-primary);
+        input[type='checkbox']{ &:checked + label:before{ box-shadow:inset 0 0 0 20px map-get($colors, success), 0 0 0 0 map-get($colors, success); } }
+    }
+    svg{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        transform: translateY(-65%);
+        left: 8px;
+        pointer-events: none;
+
+        path{
+            stroke: #fff;
+            stroke-width: 18px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none; 
+        }
+    }
+}

@@ -1,0 +1,40 @@
+//////////////////////
+// Flexslider Style
+//////////////////////
+.flexslider{
+    border-radius: 0;
+    margin: 0;
+    border: 0;
+    max-width: 100%;
+    overflow: hidden;
+    .flex-control-thumbs{
+        li {
+            width: calc(25% - 4.75px);
+            img{
+                padding: 2px;
+                border: 1px solid map-get($colors, 8);
+                border-radius: $radius-primary;
+                margin-bottom: 6px;
+                &.flex-active{
+                    border-color:  map-get($colors, 3);
+                }
+            }
+            &:not(:nth-child(4)){
+                margin-right: 6px;
+            }
+        }
+    }
+}
+.flex-direction-nav a{
+    &.flex-next:before {
+        font-family: FontAwesome;
+        content: "\f105";
+        line-height: 40px;
+        text-shadow: none;
+    }
+    &:before{
+        font-family: FontAwesome;
+        content: "\f104";   
+    }
+}
+    

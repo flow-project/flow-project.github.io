@@ -1,0 +1,49 @@
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th{
+    padding: $el-padding-3 $el-padding-5;
+    border-top: 0;
+}
+
+.table>thead>tr>th{
+    border-bottom: 1px solid map-get($colors, 9);
+}
+.table {
+    margin-bottom: map-get($spacers, 6);
+    border: 1px solid map-get($colors, 9);
+    background-color: #fff;
+    border-radius: $radius-primary;
+
+    tbody{
+        tr:not(:first-child){
+            border-top: 1px solid map-get($colors, 9);
+        }
+    } 
+
+
+    th, td {
+        vertical-align: middle;
+        border: 0;
+    }
+
+    thead{
+        background-color: map-get($colors, 10);
+        th{
+            vertical-align: bottom;
+            font-family: $font-1;
+            font-size: modular-scale(-1);
+        }
+    }
+}
+
+.table-striped {
+    tbody tr:nth-of-type(even) {
+        background-color: map-get($colors, 11);
+    }
+    tbody tr:nth-of-type(odd) {
+        background-color: #fff;
+    }
+}

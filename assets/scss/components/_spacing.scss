@@ -1,0 +1,83 @@
+$responsive-slugs: (xs: -xs, sm: -sm, md: -md, lg: -lg, xl: -xl);
+$responsive-slug: ;
+$attribute: ;
+@mixin space-around{
+    @each $index, $spacer in $spacers{
+        .#{$class-slug}#{map-get($responsive-slugs, #{$responsive-slug})}-#{$index}{
+            #{$attribute}: $spacer !important;
+        }
+        .#{$class-slug}t#{map-get($responsive-slugs, #{$responsive-slug})}-#{$index}{
+            #{$attribute}-top: $spacer !important;
+        }
+        .#{$class-slug}r#{map-get($responsive-slugs, #{$responsive-slug})}-#{$index}{
+            #{$attribute}-right: $spacer !important;
+        }
+        .#{$class-slug}b#{map-get($responsive-slugs, #{$responsive-slug})}-#{$index}{
+            #{$attribute}-bottom: $spacer !important;
+        }
+        .#{$class-slug}l#{map-get($responsive-slugs, #{$responsive-slug})}-#{$index}{
+            #{$attribute}-left: $spacer !important;
+        }
+        .#{$class-slug}x#{map-get($responsive-slugs, #{$responsive-slug})}-#{$index}{
+            #{$attribute}-left: $spacer !important;
+            #{$attribute}-right: $spacer !important;
+        }
+        .#{$class-slug}y#{map-get($responsive-slugs, #{$responsive-slug})}-#{$index}{
+            #{$attribute}-top: $spacer !important;
+            #{$attribute}-bottom: $spacer !important;
+        }
+    }
+}
+
+$class-slug: m;
+@if( $class-slug == m){
+    $attribute: margin;
+    @include space-around;
+    @include mq($until: mobile) {
+        $responsive-slug: xs;
+        @include space-around;
+    }
+    @include mq($from: mobile) {
+        $responsive-slug: sm;
+        @include space-around;
+    }
+    @include mq($from: tablet) {
+        $responsive-slug: md;
+        @include space-around;
+    }
+    @include mq($from: desktop) {
+        $responsive-slug: lg;
+        @include space-around;
+    }
+    @include mq($from: wide) {
+        $responsive-slug: xl;
+        @include space-around;
+    }
+}
+
+$responsive-slug: ;
+$class-slug: p;
+@if( $class-slug == p){
+    $attribute: padding;
+    @include space-around;
+    @include mq($until: mobile) {
+        $responsive-slug: xs;
+        @include space-around;
+    }
+    @include mq($from: mobile) {
+        $responsive-slug: sm;
+        @include space-around;
+    }
+    @include mq($from: tablet) {
+        $responsive-slug: md;
+        @include space-around;
+    }
+    @include mq($from: desktop) {
+        $responsive-slug: lg;
+        @include space-around;
+    }
+    @include mq($from: wide) {
+        $responsive-slug: xl;
+        @include space-around;
+    }
+}

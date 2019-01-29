@@ -1,0 +1,91 @@
+///////////////////////////////////
+//
+// Default Configurations
+// You can configure your own template with _config.scss
+//
+///////////////////////////////////
+// Responsive breakpoints
+///////////////////////////////////
+$mq-responsive: true;
+$mq-breakpoints: (
+    mobile				: 576px,
+    tablet				: 768px,
+    desktop				: 992px,
+    wide				: 1200px,
+    ultrawide			: 1400px
+) !default;
+
+
+
+////////////////////////////////////
+// Typography
+////////////////////////////////////
+
+$modular-scale-base		: 1rem !default;
+$modular-scale-ratio	: 1.333 !default;
+
+$font-1			: 'Open Sans', sans-serif !default;
+$font-2			: 'Droid Serif', serif !default;
+
+
+
+////////////////////////////////////
+//Layouts & shapes
+////////////////////////////////////
+
+$spacer					: 1rem !default;
+$spacers		:(	0	: 0,
+			    	1	: ($spacer * 0.25),
+			    	2	: ($spacer * 0.5),
+			    	3	: $spacer,
+			    	4	: ($spacer * 1.8),
+			    	5	: ($spacer * 3.0),
+			    	6	: ($spacer * 4.0),
+			    	7	: ($spacer * 5.0),
+			    	8	: ($spacer * 7.5),
+			    	9	: ($spacer * 10.0),
+			    	10	: ($spacer * 12.5),
+			    	11	: ($spacer * 15.0)) !default;
+
+$el-padding-1			: ($spacer * 0.2) !default;
+$el-padding-2			: ($spacer * 0.4) !default;
+$el-padding-3			: ($spacer * 0.8) !default;
+$el-padding-4			: ($spacer * 1.2) !default;
+$el-padding-5			: ($spacer * 2.5) !default;
+$el-padding-6			: ($spacer * 5.0) !default;
+
+$radius-primary			: 3px !default;
+$radius-secondary		: 10px !default;
+$radius-capsule			: 50px !default;
+
+
+
+////////////////////////////////////
+// Colors
+////////////////////////////////////
+$transition				: all 0.2s ease-in-out;
+
+
+
+////////////////////////////////////
+// Colors
+////////////////////////////////////
+
+$colors		:(	black	: black,
+		    	1		: #161616,
+		    	2		: #2b2b2b,
+		    	3		: #404040,
+		    	4		: #555555,
+		    	5		: #6a6a6a,
+		    	6		: #7F7F7F,
+		    	7		: #949494,
+		    	8		: #bebebe,
+		    	9		: #e1e1e1,
+		    	10		: #f2f2f2,
+		    	11		: #fafafa,
+		    	white	: white,
+		    	primary : #007AFF,
+		    	info	: #5AC8FA,
+				success	: #4CD964,
+				warning	: #FF9500,
+				danger	: #FF3B30) !default;

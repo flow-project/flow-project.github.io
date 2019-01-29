@@ -1,0 +1,15 @@
+/////////////////////
+// Remodal
+/////////////////////
+.remodal-video{
+    padding: 0;
+    min-width: 75%;
+}
+.remodal-overlay{ background-color: rgba(map-get($colors, 1), 0.9); }
+.remodal-close{
+    top: -35px;
+    left: -35px;
+    @include hover-focus {
+        color: white;
+    }
+}

@@ -1,0 +1,42 @@
+// Video modal background color fix
+// #videoModalIframeWrapper {
+//     background: black;
+// }
+
+//icon alignment fix
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+}
+
+
+/////////////////////////////
+//One Page Nav
+/////////////////////////////
+// .navs{
+//     width: 100%;
+//     &.fixed{
+//         left: 0;
+//         top: 0;
+//     }
+//     @include navigation-bar();
+// }
+
+
+// ////////////////////////////
+// // Object Helper
+// ////////////////////////////
+// .object-fit-fill {
+//     object-fit: fill;
+// }
+// .object-fit-contain {
+//     object-fit: contain;
+// }
+// .object-fit-cover {
+//     object-fit: cover;
+// }
+// .object-fit-none {
+//     object-fit: none;
+// }
+// .object-fit-scale-down {
+//     object-fit: scale-down;
+// }

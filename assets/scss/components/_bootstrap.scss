@@ -1,0 +1,116 @@
+/////////////////////////////////////////
+// Global general styles
+/////////////////////////////////////////
+body{
+    position: relative;
+    min-height: 100%;
+}
+
+* {outline: none !important;}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    color: map-get($colors, primary);
+    transition: $transition;
+    &:hover, &:focus{
+        color: darken(map-get($colors, primary), 10%);
+        text-decoration-color: currentColor;
+    }
+}
+
+.container{ z-index: 1;}
+
+
+//////////////////////////////
+// Bootstrap Override
+//////////////////////////////
+.card{
+    border-color: map-get($colors, 10);
+    border-radius: $radius-primary;
+}
+.card-img-top {
+    border-top-right-radius: $radius-primary;
+    border-top-left-radius: $radius-primary;
+}
+.card-block{ padding: $el-padding-5; }
+.card-header, .card-footer{
+    font-family: $font-1;
+    background-color: map-get($colors, 11);
+    padding: $el-padding-4 $el-padding-5;
+}
+.card-header{ border-bottom-color: map-get($colors, 10); }
+.card-footer{ border-top-color: map-get($colors, 10); }
+.card-header:first-child{ border-radius: $radius-primary $radius-primary 0 0; }
+.card-footer:last-child{ border-radius: 0 0 $radius-primary $radius-primary; }
+.list-group-item{
+    padding: $el-padding-2 $el-padding-4;
+    border-color: map-get($colors, 10);
+}
+.card>.list-group:first-child .list-group-item:first-child { border-radius: $radius-primary $radius-primary 0 0;}
+
+@each $index, $color in $colors{
+    .card-outline-#{$index}{
+        border-color: map-get($colors, $index);
+    }
+}
+
+
+//////////////////////////////
+// Masonry Grid
+//////////////////////////////
+.card-columns {
+    @include mq($until: desktop) {
+        column-count: 1;
+    }
+    @include mq($from: desktop) {
+        column-count: 2;
+    }
+    @include mq($from: wide) {
+        column-count: 3;
+    }
+}
+
+
+//////////////////////////////
+// Badge
+//////////////////////////////
+.badge{
+    font-family: $font-1;
+    &:not(.badge-pill){ border-radius: $radius-primary; }
+}
+
+
+//////////////////////////////////////
+//Button [Bootstrap 4 effect fixed]
+//////////////////////////////////////
+.btn{
+    &[class*='btn-']:focus{
+        box-shadow: none;
+    }
+}
+
+
+///////////////////////////
+// Pagination
+///////////////////////////
+@mixin pagination($color){
+    .page-item{
+        .page-link{
+            color: map-get($colors, $color);
+        }
+        &.active .page-link{
+            background-color: map-get($colors, $color);
+            border-color: transparent;
+            color: white;
+        }
+    }
+}
+.pagination{
+    @include pagination('primary');
+}
+.pagination-warning{
+    @include pagination('warning');
+}

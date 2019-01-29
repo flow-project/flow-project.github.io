@@ -1,0 +1,7 @@
+///////////////////////////////////////
+// Syntex Highliter 
+///////////////////////////////////////
+:not(pre) > code[class*="language-"], pre[class*="language-"]{
+    background-color: map-get($colors, 11);
+    border: 1px solid map-get($colors, 9);
+}

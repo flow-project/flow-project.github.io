@@ -1,0 +1,20 @@
+//////////////////////
+// typed text
+//////////////////////
+.typed-cursor{
+    opacity: 1;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+span.typed-cursor {
+    background:currentColor;
+    width: 2px !important;
+    display: inline-block;
+    text-indent: 10000px;
+    line-height: 1.4em;
+}

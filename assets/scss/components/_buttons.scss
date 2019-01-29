@@ -1,0 +1,218 @@
+//
+// Buttons
+//
+
+
+// from bootstrap 4
+//https: //github.com/twbs/bootstrap/blob/v4-dev/scss/mixins/_buttons.scss
+
+@mixin button-variant($color, $background, $border) {
+    $active-background: darken($background,10%);
+    $active-border: darken($border,12%);
+
+    color: $color;
+    background-color: $background;
+    border-color: $border; // Hover and focus styles are shared
+
+    &.active, &:hover, &:active, &:focus, &:active:focus {
+        color: $color;
+        background-color: $active-background;
+        border-color: $active-border;
+    }
+
+    // Disabled comes first so active can properly restyle
+
+    &.disabled, &:disabled {
+        background-color: $background;
+        border-color: $border;
+    }
+    &:active, &.active, .show > &.dropdown-toggle {
+        color: $color;
+        background-color: $active-background;
+        background-image: none; // Remove the gradient for the pressed/active state
+        border-color: $active-border;
+        z-index: 99;
+    }
+}
+
+
+
+//
+// Outline button variant
+//
+
+@mixin button-outline-variant($color) {
+    color: $color;
+    background-image: none;
+    background-color: transparent;
+    border-color: $color;
+    &.btn-icon {
+        span {
+            border-color: $color;
+            background-color: transparent;
+            transition: background-color 0.2s ease-in-out;
+        }
+        &:hover, &:focus, &:active, &:active:focus {
+            span {
+                background-color: rgba(0,0,0,0.1);
+                border-color: transparent;
+            }
+        }
+    }//end .btn-icon
+
+
+    &:hover {
+        color: map-get($colors, white);
+        background-color: $color;
+        border-color: $color;
+    }
+    &:focus, &.focus {
+        color: map-get($colors, white);
+        background-color: $color;
+        border-color: $color;
+    }
+    &:active, &.active, .open > &.dropdown-toggle {
+        color: map-get($colors, white);
+        background-color: $color;
+        border-color: $color;
+        &:hover, &:focus, &.focus {
+            color: map-get($colors, white);
+            background-color: darken($color,17%);
+            border-color: darken($color,25%);
+        }
+    }
+    &.active{
+        background-color: darken($color,17%);
+        border-color: darken($color,25%);
+    }
+    &.disabled, &:disabled {
+        &:focus, &.focus { border-color: lighten($color,20%); }
+        &:hover { border-color: lighten($color,20%); }
+    }
+} //end outline varient
+
+
+
+@mixin icon-button-variant($el-padding-3, $el-padding-5, $icon-width) {
+    padding-left: ($el-padding-5/2.5) + $icon-width;
+    &.btn-icon-right {
+        padding-left: $el-padding-5;
+        padding-right: ($el-padding-5/2.5) + $icon-width;
+    }
+    span {
+        width: $icon-width;
+        font-size: $icon-width/2;
+    }
+}// end icon-button-variant
+
+
+//
+//zion button styles
+//
+
+.btn {
+    padding: $el-padding-3 $el-padding-5;
+    font-family: $font-1;
+    font-weight: 600;
+    font-size: modular-scale(-1);
+    letter-spacing: 0.01em;
+    border-radius: $radius-primary;
+    transition: all 0.2s ease-in-out;
+    line-height: 1.5;
+    
+    &.btn-xs { padding: $el-padding-1 $el-padding-3; }
+    &.btn-sm { padding: $el-padding-2 $el-padding-4; }
+    &.btn-lg {
+        padding: $el-padding-4 $el-padding-6;
+        font-size: modular-scale(0);
+    }
+    &.active, &:active { box-shadow: none; }
+}
+
+.btn-capsule { border-radius: $radius-capsule; }
+
+
+//
+// solid buttons color
+//
+
+.btn-primary { @include button-variant(map-get($colors, white), map-get($colors, primary),darken(map-get($colors, primary),5%)); }
+.btn-info { @include button-variant(map-get($colors, white), map-get($colors, info),darken(map-get($colors, info),5%)); }
+.btn-success { @include button-variant(map-get($colors, white), map-get($colors, success),darken(map-get($colors, success),5%)); }
+.btn-warning { @include button-variant(map-get($colors, white), map-get($colors, warning),darken(map-get($colors, warning),5%)); }
+.btn-danger { @include button-variant(map-get($colors, white), map-get($colors, danger),darken(map-get($colors, danger),5%)); }
+
+
+//
+//outline buttons from bootstrap 4
+//
+
+.btn-outline-primary { @include button-outline-variant(map-get($colors, primary)); }
+.btn-outline-info { @include button-outline-variant(map-get($colors, info)); }
+.btn-outline-success { @include button-outline-variant(map-get($colors, success)); }
+.btn-outline-warning { @include button-outline-variant(map-get($colors, warning)); }
+.btn-outline-danger { @include button-outline-variant(map-get($colors, danger)); }
+.btn-outline-dark { @include button-outline-variant(map-get($colors, 1)); }
+.btn-outline-white { 
+    @include button-outline-variant(map-get($colors, white));
+    &:hover, &:active, &:focus, &:active:focus { color: map-get($colors, 1); }
+}
+
+
+//
+// Icon Buttons
+//
+
+.btn-icon {
+    @include icon-button-variant($el-padding-3,$el-padding-5,2.6rem);
+    position: relative;
+    span {
+        left: 0;
+        top: 0;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &.btn-icon-left { span { left: 0; } }
+    &.btn-icon-right {
+        span {
+            right: 0;
+            left: auto;
+        }
+    }
+    &.btn-capsule {
+        &.btn-icon-left { span { border-radius: $radius-capsule 0 0 $radius-capsule; } }
+        &.btn-icon-right { span { border-radius: 0 $radius-capsule $radius-capsule 0; } }
+    }
+    &.btn-xs { @include icon-button-variant($el-padding-1,$el-padding-3,2rem); }
+    &.btn-sm { @include icon-button-variant($el-padding-2,$el-padding-4,2.5rem); }
+    &.btn-lg { @include icon-button-variant($el-padding-4,$el-padding-6,4rem); }
+    &[class*='btn-outline-'] {
+        span {
+            border-right-width: 1px;
+            border-right-style: solid;
+        }
+        &.btn-icon-right {
+            span {
+                border-left-width: 1px;
+                border-left-style: solid;
+                border-right: none;
+            }
+        }
+    }
+}
+
+
+//
+// Special buttons
+//
+
+.btn-white { @include button-variant(map-get($colors, 1), map-get($colors, white), map-get($colors, white)); }
+.btn-dark { @include button-variant(map-get($colors, white), map-get($colors, 1), darken(map-get($colors, 1), 5%)); }
+.facebook { @include button-variant(map-get($colors, white), map-get($colors, facebook), map-get($colors, facebook)); }
+.twitter { @include button-variant(map-get($colors, white), map-get($colors, twitter), map-get($colors, twitter)); }
+.google-plus { @include button-variant(map-get($colors, white), map-get($colors, google-plus), map-get($colors, google-plus)); }
+.github { @include button-variant(map-get($colors, white), map-get($colors, github), map-get($colors, github)); }

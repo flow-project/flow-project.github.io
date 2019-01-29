@@ -1,0 +1,310 @@
+////////////////////////////////////////////////
+//
+// Mixins
+//
+////////////////////////////////////////////////
+@mixin znav-color($color, $background){
+	background-color: $background;
+	hr{ border-top-color: rgba($color, 0.05);}
+	button{ color: $color; }
+	a:not(.btn){
+		color: rgba($color, 0.6);
+		@include hover-focus { color: $color }
+	}
+	a.navbar-brand{ color: $color; }
+	[class*='has-']:after{ color: $color; }
+	.megamenu, .dropdown{
+		color: $color;
+		background-color: $background;
+		@include mq($from: desktop) { box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); }
+	}
+}
+
+@mixin indicator{
+	position: relative;
+	&:after{
+		content: '\f107';
+		font-family: 'FontAwesome';
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: block;
+		padding: 0;
+		height: 9px;
+		width: 9px;
+		pointer-events: none;
+		z-index: 2000;
+		transition: transform 0.2s ease-in-out;
+		transform: translateX(-2px) translateY(1px);
+		@include mq($from: desktop) {transform: translateX(-8px); }
+	}
+}
+// End of Mixins
+
+
+////////////////////////////////////
+//
+// Basic Navbar
+//
+////////////////////////////////////
+.znav-container{
+	// box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.04);
+	&:not([class*="sticky-"]){
+		top: 0;
+		left: 0;
+		right: 0;
+	    position: relative;
+		z-index: 1030;	
+	}
+	
+	@include mq($until: desktop) {
+		max-height: 100vh;
+	 	overflow-y: auto;
+	}
+
+	hr{ margin: 2px 0; }
+
+	.navbar {
+	    font-family: $font-1;
+	    font-weight: 600;
+	    font-size: modular-scale(-1);
+	    letter-spacing: 0.01em;
+	    border-radius: $radius-primary;
+	    transition: all 0.2s ease-in-out;
+	    padding-left: 0;
+	    padding-right: 0;
+	    line-height: 1.5;
+	    a.navbar-brand {
+	        font-size: modular-scale(1);
+	        text-transform: uppercase;
+	        align-self: flex-start;
+	    }
+	    button.navbar-toggler{
+	    	transform: translate3d(25px, -5px, 0);
+	    	padding: 0;
+	    }
+	}
+
+	ul{
+		list-style-type: none;
+		padding-left: 0;
+		@include mq($from: desktop) { margin-left: -$el-padding-4; }
+		li{
+			padding: 0;
+			position: relative;
+			a:not(.btn){
+				border: 1px solid transparent;
+				display: block;
+				padding: $el-padding-2 $el-padding-4;
+				transition: all 0.2s ease-in-out;
+				@include hover-focus { text-decoration: none; }
+				@include mq($until: desktop) { margin-left: -$el-padding-4; }
+			}
+		}
+	}
+
+	//////////////////
+	// Dropdown
+	//////////////////
+	.dropdown, .megamenu{
+		border-radius: $radius-primary;
+		@include mq($until: desktop) { display: none; }
+		@include mq($from: desktop) {
+			transition: all 0.2s ease-in-out;
+			pointer-events: none;
+			opacity: 0;
+			display: none;
+		}
+	}
+	.megamenu{
+		ul{
+			li{
+				a{
+					font-weight: 400;
+					padding: $el-padding-1 $el-padding-4;
+				}
+			}
+		}
+	}
+	.has-dropdown{
+		> a {
+			@include indicator;
+			&:after{ top: 6px; }
+		}
+		.dropdown{
+			left: 0;
+			min-width: 160px;
+			padding: $el-padding-2 0;
+		}
+	}
+	.has-megamenu{ > a {
+			@include indicator;
+			&:after{ top: 6px; }
+		}
+	}
+	//////////////////
+	//
+	// Navabar
+	//
+	//////////////////
+	ul.navbar-nav{
+		@include mq($until: desktop) { padding: $el-padding-4 0;}
+		> li {
+			.btn{
+				// margin: 0 5px;
+				@include mq($from: desktop) {
+					// &:first-child{ margin-left: $el-padding-4;}
+					// &:last-child{ margin-right: 0; }
+				}
+				@include mq($until: desktop) {
+					width: 100%;
+					margin: 5px 0;
+				}
+			}
+		}
+
+		//////////////////
+		// Until Desktop
+		//////////////////
+		@include mq($until: desktop) {
+			> li.has-dropdown{ ul.dropdown{
+					padding-left: $el-padding-5;
+					.has-dropdown >a:after{ top: 0; }
+				}
+			}
+			.z-active { > .megamenu, > .dropdown{ display: block; } }
+			> li.has-megamenu{ .megamenu{ padding-left: $el-padding-5; } }
+			.mt-sm-down-1{ margin-top: $el-padding-4 !important; }
+		}
+
+		//////////////////
+		// From Desktop
+		//////////////////
+		@include mq($from: desktop) {
+			//////////////////
+			// Dropdown
+			//////////////////
+			li.has-dropdown{
+				.has-dropdown{
+					> a:after{ content: '\f105' }
+					@include hover-focus { > a:after{ transform: translateX(-2px); } }
+				}
+				ul.dropdown{
+					display: block;
+					position: absolute;
+					margin-left: 0;
+					padding: $el-padding-4 0;
+				}
+				> ul.dropdown{
+					ul.dropdown{
+						left: 100%;
+						top: -$el-padding-1;
+						&.dropdown-push-left{
+							left: auto;
+							right: 100%;
+						}
+					}
+					&.dropdown-align-right{
+						left: auto;
+						right: 0;
+					}
+				}
+				@include hover-focus {
+					> ul.dropdown{
+						pointer-events: all;
+						opacity: 1;
+					}
+				}
+			}// End of .has-dropdown
+			//////////////////
+			// Megamenu
+			//////////////////
+			> li.has-megamenu{
+				position: static;
+				.megamenu{
+					display: block;
+					border-radius: $radius-primary;
+					left: 0;
+					position: absolute;
+					.gutter-0{ padding: 0; }
+				}
+				@include hover-focus {
+					.megamenu{
+						pointer-events: all;
+						opacity: 1;
+					}
+				}
+			}// End of .has-megamenu
+		} // End of mq[From Desktop]
+	}// End of ul.navbar-nav
+}// End of .znav-container
+
+
+////////////////////////////////////
+//
+// Navbar Color Schemes
+//
+////////////////////////////////////
+.znav-container{ @include znav-color(map-get($colors, 11), map-get($colors, 1)); }
+.znav-primary{ @include znav-color(map-get($colors, 11), map-get($colors, primary)); }
+.znav-success{ @include znav-color(map-get($colors, 11), map-get($colors, success)); }
+.znav-info{ @include znav-color(map-get($colors, 11), map-get($colors, info)); }
+.znav-warning{ @include znav-color(map-get($colors, 1), map-get($colors, warning)); }
+.znav-danger{ @include znav-color(map-get($colors, 11), map-get($colors, danger)); }
+.znav-dark{ @include znav-color(map-get($colors, 11), map-get($colors, 1)); }
+
+.znav-white{
+	@include znav-color(map-get($colors, 1), map-get($colors, white));
+	.dropdown, .megamenu{ @include mq($from: desktop) { box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08); } }
+}
+
+
+//////////////////////////////////////////
+// Transparent Background Style
+//////////////////////////////////////////
+.znav-semi-transparent{
+	&.znav-white{ background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%,rgba(255,255,255,1) 100%); }
+    &.znav-dark{ background: linear-gradient(to bottom, rgba(map-get($colors, 1), 0.9) 0%,rgba(map-get($colors, 1), 1) 100%); }
+    @include mq($until: desktop) { .dropdown, .megamenu{ background-color: transparent; } }
+}
+.znav-transparent{;
+	position: absolute !important;
+	&.znav-container{
+		background-color: transparent;
+		.navbar-nav > li > a:not(.btn){
+            color: rgba(map-get($colors, white), 0.8);
+        }
+	}
+}
+
+////////////////////////////////////
+//
+// Hamburger Styles
+//
+////////////////////////////////////
+.hamburger{
+    padding: 8px;
+    .hamburger-box{
+        height: 0;
+        width: 30px;
+        .hamburger-inner{
+            &, &::after, &::before{
+                width: 100%;
+                height: 1px;
+                border-radius: $radius-primary;
+                background-color: currentColor;
+            }
+		}
+	}
+	&.is-active { .hamburger-inner{ background-color: transparent; } }
+}
+.hamburger-inner::before{ top: -7px; }
+.hamburger--emphatic .hamburger-inner::after{ top: 7px; }
+
+////////////////////////////////////
+//
+// Navbar Helper Classes
+//
+////////////////////////////////////
+.znav-fixed { position: fixed !important; }
+.znav-revealed { position: fixed; }

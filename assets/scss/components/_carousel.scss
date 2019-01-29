@@ -1,0 +1,107 @@
+//////////////////////
+// Carousel Style
+//////////////////////
+.owl-theme{
+    .owl-dots {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        .owl-dot {
+            padding: $el-padding-3 0;
+            span{
+                border-radius: $radius-primary;
+                width: 50px;
+                height: 2px;
+                background-color: rgba(map-get($colors, 6), 0.35);
+                transition: background-color 0.4s ease-in-out;
+            }
+            
+            &.active{ span { background-color: map-get($colors, primary); } }
+            @include hover-focus { span {  background-color: map-get($colors, 3); } }
+        }
+    }
+    @include hover-focus { .owl-nav { [class*=owl-] { opacity: 0.75; } } }
+    .owl-nav{
+        margin-top: 0;
+        [class*=owl-] {
+            opacity: 0;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            background-color: map-get($colors, 10);
+            font-size: modular-scale(2);
+            transition: opacity 0.4s ease-in-out;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            line-height: 1.5;
+            color: map-get($colors, 2);
+            margin: 0;
+            @include hover-focus {
+                background-color: map-get($colors, 10);
+                color: map-get($colors, 2);
+                cursor: pointer;
+                opacity: 1;
+            }
+        }
+        .owl-prev{ left: 0; }
+        .owl-next{ right: 0; }
+    }
+    &.nav-square{
+        .owl-nav{
+            margin-top: 0;
+            [class*=owl-] {
+                border-radius: 0;
+            }
+        }
+    }
+    &.owl-nav-outer{
+        .owl-nav{
+            .owl-prev{ left: - map-get($spacers, 6); }
+            .owl-next{ right: - map-get($spacers, 6); } 
+        }
+    }
+    &.owl-dots-inner{
+        .owl-dots{
+            bottom: 0px;
+
+        }
+    }
+    &.owl-dot-round{
+        .owl-dots{
+            .owl-dot{
+                span{
+                    height: 10px;
+                    width: 10px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    @mixin owl-theme-variant($theme-color){
+        .owl-dots{
+            .owl-dot{
+                &.active{
+                    span{
+                        background-color: map-get($colors, $theme-color);
+                    }
+                }
+            }
+        }
+        // .owl-nav{
+        //     [class*=owl-]{
+        //         background-color: rgba(map-get($colors, $theme-color), 0.8);
+        //         color: map-get($colors, white);
+        //         @include hover-focus {
+        //             background-color: map-get($colors, $theme-color);
+        //         }
+        //     }
+        // }
+    }
+    &.owl-theme-info{ @include owl-theme-variant(info); }
+    &.owl-theme-success{ @include owl-theme-variant(success); }
+    &.owl-theme-warning{ @include owl-theme-variant(warning); }
+    &.owl-theme-danger{ @include owl-theme-variant(danger); }
+    &.owl-theme-black{ @include owl-theme-variant(black); }
+    &.owl-theme-white{ @include owl-theme-variant(white); }
+}
