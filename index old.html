@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+  <title>Flow</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124124439-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-124124439-2');
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="index.html">Flow</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="team.html">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="usingflow.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Using Flow</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="usingflow.html#code">Code</a>
+            <a class="dropdown-item" href="usingflow.html#documentation">Documentation</a>
+            <a class="dropdown-item" href="usingflow.html#tutorials">Tutorials</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="publications.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="resources.html">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="scoreboard.html">Scoreboard</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main role="main" class="container">
+    <!-- <div class="starter-template" style="background:transparent url('figures/img/dark_highway_blur_crop.png') no-repeat center center /cover"> -->
+    <div class="starter-template">
+      <h1>Flow: a deep reinforcement learning framework for mixed autonomy traffic</h1>
+      <p class="lead">
+        Flow is a traffic control benchmarking framework. It provides a suite of traffic control scenarios (benchmarks), tools for designing custom traffic scenarios, and integration with deep reinforcement learning and traffic microsimulation libraries.
+        <!-- [expand a bit more?] -->
+      </p>
+      <!-- <h3>Mixed-Autonomy Traffic: The Near Future</h3>
+        [some pictures]
+
+        <h3>Deep Reinforcement Learning</h3>
+        [a video?]
+
+        <h3>What we do [necessary?]</h3>
+        [a video?]
+
+        <br> <br> -->
+      <p>
+        Flow is developed at the University of California, Berkeley.
+      </p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <figure>
+            <img class="img-fluid frontpageimg" alt="Flow process diagram" style="display:block; margin:auto" src="figures/experiments/flow_process_diagram_2.png">
+            <figcaption class="small text-center">The various components of Flow.</figcaption>
+          </figure>
+        </div>
+        <div class="col-xl-6">
+          <figure>
+            <img class="img-fluid frontpageimg" alt="Flow training process" style="display:block; margin:auto" src="figures/experiments/flow_diag_gauss_2.png">
+            <figcaption class="small text-center">The Flow training and evaluation process.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <h1>Results</h1>
+    <p class="lead">
+      The following are successful controllers developed with Flow. For more details visit our <a href="gallery.html">gallery</a>.
+    </p>
+    <div class="container">
+      <div class="row">
+        <!-- should these be centered? -->
+        <h2>Phantom shockwave dissipation on a ring</h2>
+      </div>
+      <div class="row">
+        <p>
+        Inspired by the famous <a href="https://www.youtube.com/watch?v=7wm-pZp_mi0">2008 Sugiyama experiment</a> demonstrating spontaneous formation of traffic shockwaves (reproduced on the left video), and a <a href="https://www.youtube.com/watch?v=2mBjYZTeaTc">2017 field study</a> demonstrating the ability of AVs to suppress shockwaves, we investigated the ability of reinforcement learning to train an <b>optimal</b> shockwave dissipating controller.
+        </p>
+        <p>
+          In the right video, we learn a controller (policy) for one out of 22 vehicles. By training on ring roads of varying lengths, and using a neural network policy with memory, we were able to learn a controller that both was optimal (in terms of average system velocity) and generalized outside of the training distribution.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/Lggtw9AOH0A?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/D0lNWWK3s9s?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <h2 class="text-center">Intersection control</h2>
+      </div>
+      <div class="row">
+        <p>
+          We demonstrated also the ability of a single autonomous vehicle to control the relative spacing of vehicles following behind it to create an optimal merge at an intersection.
+        </p>
+        <p>
+          As can be seen in the videos, without any AVs, the vehicles are stopped at the intersection by vehicles in the other direction; we show that even at low penetration rates, the autonomous vehicle "bunches" all of the other vehicles to avoid the intersection, resulting in a huge speed improvement.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/Z6QltFAEDeQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/SoA_7fPJEG8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <h2 class="text-center">Bottleneck control</h2>
+      </div>
+      <div class="row">
+        <p> Inspired by the rapid decrease in lanes on the San Francisco-Oakland Bay Bridge, we study a bottleneck that merges from four lanes down to two to one. </p>
+      </div>
+      <div class="row">
+        <p> We demonstrate that the AVs are able to learn a strategy that increases the effective outflow at high inflows, and performs competitively with ramp metering. </p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <figure>
+            <img src="figures/experiments/bottleneck_control.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Control structure of the bottleneck. Scale of segments are distorted for visualization. </figcaption>
+          </figure>
+        </div>
+        <div class="col-lg-6">
+          <figure>
+            <img src="figures/experiments/bottleneck_congestion.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Without control, congestion rapidly forms in the bottleneck.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <figure>
+            <img src="figures/experiments/uncontrolVRLBigAxes.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Control structure of the bottleneck; at high inflows the outflow is improved by 25%. </figcaption>
+          </figure>
+        </div>
+        <div class="col-lg-6">
+          <figure>
+            <img src="figures/experiments/RLVAlineaBigAxes.png" class="img-fluid result" alt="Bottleneck control design">
+            <figcaption class="small text-center"> Comparison of inflow, outflow curves for AV control vs. ramp metering. At high inflows they perform comparably. </figcaption>
+          </figure>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div class="row">
+        <h2 class="text-center">On-ramp shockwave dissipation</h2>
+      </div>
+      <div class="row">
+        <p>
+          We demonstrate the ability of shockwave dissipation, previously demonstrated on a ring to scale to an actual highway situation. Vehicles travelling on a highway are perturbed by an aggressive on-ramp merge that the autonomous vehicle needs to dissipate.
+        </p>
+        <p>
+          As can be seen in the videos, the autonomous vehicle learns to slow its following vehicles to either avoid the perturbation or smooth its effects.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/RPBAZH3Z0Sk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="col-xl-6">
+          <iframe width="533" height="300" src="https://www.youtube.com/embed/r-sBz1VOtp4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- /.container -->
+  <!-- Bootstrap core JavaScript
+      <p>
+        Flow was developed at the University of California, Berkeley.
+      </p>
+    </div>
+  </main>
+  <!-- /.container -->
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+
+</html>
