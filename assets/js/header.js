@@ -16,13 +16,13 @@ document.write('<div class="znav-container znav" id="znav-container">\
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">\
                                 <ul class="navbar-nav ml-auto">\
                                     <li>\
-                                         <a href="/usingflow.html"> <span class="icon-Arrow-Right2 fw-300 color-warning" ></span> Get Started</a>\
+                                         <a href="/usingFlow.html"> <span class="icon-Arrow-Right2 fw-300 color-warning" ></span> Get Started</a>\
                                     </li>\
                                     <li>\
                                         <a href="JavaScript:void(0)">Resources</a>\
                                         <ul class="dropdown dropdown-push-left">\
                                             <li>\
-                                                <a href="/gallery.html">Gallery</a>\
+                                                <a href="/gallery/index.html">Gallery</a>\
                                             </li>\
                                             <li>\
                                                 <a href="/publications.html">Publications</a>\
