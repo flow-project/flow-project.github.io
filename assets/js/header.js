@@ -18,6 +18,7 @@ document.write('<div class="znav-container znav" id="znav-container">\
                                     <li>\
                                          <a href="/usingFlow.html"> <span class="icon-Arrow-Right2 fw-300 color-warning" ></span> Get Started</a>\
                                     </li>\
+                                    
                                     <li>\
                                         <a href="JavaScript:void(0)">Resources</a>\
                                         <ul class="dropdown dropdown-push-left">\
@@ -34,6 +35,9 @@ document.write('<div class="znav-container znav" id="znav-container">\
                                                 <a href="/tutorial.html">Tutorials</a>\
                                             </li>\
                                         </ul>\
+                                    </li>\
+                                    <li>\
+                                         <a href="#">Benchmarks</a>\
                                     </li>\
                                     <li>\
                                         <a href="JavaScript:void(0)">About</a>\
