@@ -17,7 +17,7 @@ document.write('<div class="znav-container znav" id="znav-container">\
                                 <ul class="navbar-nav ml-auto">\
                                     <li>\
                                          <a href="/usingFlow.html"> <span class="icon-Arrow-Right2 fw-300 color-warning" ></span> Get Started</a>\
-                                    </li>\                     
+                                    </li>\
                                     <li>\
                                         <a href="JavaScript:void(0)">Resources</a>\
                                         <ul class="dropdown dropdown-push-left">\
