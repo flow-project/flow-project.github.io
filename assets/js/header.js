@@ -45,6 +45,9 @@ document.write('<div class="znav-container znav" id="znav-container">\
                                                 <a href="/team.html">Team</a>\
                                             </li>\
                                             <li>\
+                                                <a href="/collaborations.html">Collaboration</a>\
+                                            </li>\
+                                            <li>\
                                                 <a href="/contact.html">Contact</a>\
                                             </li>\
                                         </ul>\
