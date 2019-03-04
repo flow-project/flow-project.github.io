@@ -1601,6 +1601,7 @@ ul.no-style {
   border-radius: 3px;
   transition: all 0.2s ease-in-out;
   line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 .btn.btn-xs {
