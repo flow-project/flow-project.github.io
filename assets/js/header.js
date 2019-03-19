@@ -9,9 +9,7 @@ document.write('<div class="znav-container znav" id="znav-container">\
                                 </div>\
                             </button>\
                             <a class="navbar-brand overflow-hidden" href="/index.html">\
-    <!--                             <span class="icon-Knight fw-300" ></span>-->\
-                                Flow\
-    <!--                            <img src="assets/images/posh-logo.png" alt="logo" width="80px">-->\
+   <img src="assets/images/favicons/fav-white.png" style="margin-bottom: 3px; margin-right: 3px;" width="25">Flow\
                             </a>\
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">\
                                 <ul class="navbar-nav ml-auto">\
