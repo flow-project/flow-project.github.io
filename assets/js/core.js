@@ -114,6 +114,27 @@ $(document).ready(function($){
 
 
 $(document).ready(function(){
+    var $tab = $(window.location.hash);
+
+    if($tab.length != 1) {
+        $tab = $("#tutorials");  // default tab
+    }
+    $tab.siblings().removeClass('active');
+    $tab.addClass('active');
+
+    var $tabs = $('.tabs, .navs');
+    var $tabIndex = $tab.index(),
+        $tabContent = $tabs.children('.tab-contents').children().eq($tabIndex),
+        $indicator = $tabs.children('.nav-bar').children(".indicator");
+
+    $tabContent.siblings().removeClass('active');
+    $tabContent.addClass('active');
+
+    $indicator.css({ 
+        left: $tab.position().left,
+        right: $tabs.children('.nav-bar').outerWidth() - ($tab.position().left + $tab.outerWidth())
+    });
+
     if($('.tabs, .navs').length){
 
         // Function for active tab indicator change
@@ -174,8 +195,6 @@ $(document).ready(function(){
         });
     }
 });
-
-
 
 
 
