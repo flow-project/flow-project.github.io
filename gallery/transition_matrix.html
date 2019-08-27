@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--  -->
+        <!--    Document Title-->
+        <!-- =============================================-->
+        <title>Transition Matrix</title>
+        <!--  -->
+        <!--    Favicons-->
+        <!--    =============================================-->
+        <script src="../assets/js/favicon.js"></script>
+        <meta name="theme-color" content="#ffffff">
+        <!--  -->
+        <!--    Stylesheets-->
+        <!--    =============================================-->
+        <!-- Default stylesheets-->
+        <link href="../assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Template specific stylesheets-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i" rel="stylesheet">
+        <link href="../assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../assets/lib/iconsmind/iconsmind.css" rel="stylesheet">
+        <link href="../assets/lib/css-hamburgers/dist/hamburgers.css" rel="stylesheet">
+        <link href="../assets/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="../assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+        <link href="../assets/lib/remodal/dist/remodal.css" rel="stylesheet"/>
+        <link href="../assets/lib/remodal/dist/remodal-default-theme.css" rel="stylesheet"/>
+        
+        <!-- Main stylesheet and color file-->
+        <link href="../assets/css/style.css" rel="stylesheet">
+        <link href="../assets/css/custom.css" rel="stylesheet"> 
+    </head>
+    <body data-spy="scroll" data-target=".inner-link" data-offset="60">
+        <main>
+            <script src="../assets/js/header.js"></script>
+            
+            
+        <section class="font-1">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-10">
+                            <h1 class="fs-3 fs-md-4">Transition Matrix</h1>
+                            <div class="fs-0 fw-400 lead">By
+                                <a href="../team.html">Jiayi Li</a>
+                            </div>
+                            <hr class="color-9">
+                            <div class="row mb-5">
+                                <div class="col-4">
+                                    <div class="fa fa-clock-o fs-1 mr-2 color-3"></div>Aug 2019</div>
+                                <div class="col-4">
+                                    <div class="fa fa-file-o fs-1 mr-2 color-3"></div>
+                                    <a href="../papers/trb_learning.pdf">Relevant Paper</a>
+                                </div>
+                                
+                            </div>
+                            <img class="mb-4 radius-primary" src="../assets/images/experiments/opening_picture.jpg">
+                            <p class="lead color-5"> We introduce a novel traffic control strategy that applies Markovian traffic assignment framework to dynamic traffic assignment. Markovian framework is a promising approach to improve the efficiency of traffic management, combining theory and learning for large scale system routing.</p>
+                            <p>Transition matrices are used in Markovian traffic assignment framework to derive traffic flow allocation and only the flow split ratios at each intersection are required for traffic assignment. Consequently, the amount of variables required for routing behavior modeling is much smaller, which makes it efficient and convenient to extend the traffic control strategy to larger system.</p>
+                            
+                            <p>As a case study, we applied the framework to a standard benchmark diagram which is simulated in Simulation for Urban Mobility (SUMO). A screenshot of the SUMO network setup is shown below on the left. The blue arrows are added to visualize the direction of traffic flow. A zoom-in window detailing the merge dynamics at C is shown below on the left: the vehicles from the two lanes take turns to merge in a “first come, first served” basis.</p>
+                            <figure>
+                                <img src="../assets/images/experiments/network_config.png" class="img-fluid result" alt="network config">
+                                    <figcaption class="small text-center"> SUMO network setup and its zoom-in window </figcaption>
+                            </figure>
+                            
+                            
+                            <p>The optimal routing behaviors are independently learned through grid search, random search, and evolution strategies, under three different reward functions (network outflow, total vehicle hours of travel, and average marginal regret).
+                            
+                            </p>
+                        
+                            <p>
+                            <b>Grid Search</b>
+                            The
+                            <a href="https://youtu.be/-BewivYKgGw"
+                                title="grid search video">video</a>
+                            shows the time-varying distribution of each reward function on the meshgrid of PAB and PBC throughout the simulation. From left to right, three graphs respectively correspond to reward functions for average outflow, inverse of vehicle hours of travel and inverse of average marginal regret.
+                            At time 487.5s, when the network has converged to steady state, the point that gives the highest reward is marked as “★” for each reward function.
+                            
+                            <figure>
+                                <img src="../assets/images/experiments/grid_search.png" class="img-fluid result" alt="Grid Search Result">
+                                    <figcaption class="small text-center"> Grid Search Result </figcaption>
+                            </figure>
+                            
+                            Random search and evolution strategies are performed on top of reward distribution graph of stabilized network, and their results are presented below:
+                            </p>
+                            
+                            
+                            
+                            <p>
+                            <b>Random Search</b>
+                            50 sample points (black dots) are picked to measure the reward function and the optimal point that gives the highest reward is marked by “＋” symbol. For comparison, the solution found by grid search is marked by “★” symbol.
+                            <figure>
+                                <img src="../assets/images/experiments/Random_Search.png" class="img-fluid result" alt="Random Search Result">
+                                    <figcaption class="small text-center"> Random Search Result </figcaption>
+                            </figure>
+                            </p>
+                            
+                            
+                            <p>
+                            <b>Evolution Strategies</b>
+                            Evolution strategies first randomly pick a starting point and then start climbing uphill with gradient ascent demonstrated by the black trace. The algorithm is manually terminated after 50 iterations at location marked by “＋” symbol. For comparison, the solution found by grid search is marked by “★” symbol.
+
+                            <figure>
+                                <img src="../assets/images/experiments/Evolution_Strategies.png" class="img-fluid result" alt="Evolution Search Result">
+                                    <figcaption class="small text-center"> Evolution Search Result </figcaption>
+                            </figure>
+                            </p>
+                            
+                            <p>
+                            In practice, if the dimension of the problem is small, all of the three methods are good
+                            choices. Grid search method is exhaustive but it doesn’t scale well with the dimension of the problem. For large problems, random search or evolution strategies should be used instead. For problems where it is possible to efficiently compute the exact gradient, vanilla gradient ascent methods may be used instead. However, random search and evolution strategies can be easily parallelized across a large cluster of nodes, which may find a good solution with higher efficiency.
+                            
+                            In conclusion, by introducing the Markov property of traffic system (eg. a traveller’s decision about the next link to take is not affected by his/her previous path),  the Markovian framework reduces the number of variables to compute in the static traffic assignment. This notion is further extended to dynamic traffic assignment using the micro-simulator SUMO. On a benchmark network, the simulator learns optimal routing behavior by finding optimal flow split ratios at every node using grid search, random search, and evolution strategies. The results show the ability of the Markovian framework to learn optimal routing behavior using SUMO.
+                            </p>
+                            <p>
+                            This work can lead to several applications:
+                            1. Use the transition matrix framework to perform traffic estimation through data assimilation using regression with cross-sectional data.
+                            2. By learning optimal transition matrices, decentralized traffic control strategies may be developed.
+                            3. With the application of Markov chain theory and graph theory, the resiliency of traffic network can be better understood.
+                            4. it’s possible to consider the time-varying transition matrices in which the split ratio at each timestep may be learned through reinforcement learning.
+                            5. For multi-OD network, it’s possible to learn a transition matrix for each destination.
+                            </p>
+                        </div>    
+                    </div>
+                    <!--/.row-->
+                </div>
+                <!--/.container-->
+            </section>
+           
+            <section class="row justify-content-center">
+                <div >  
+                    <a href="index.html" class="btn btn-icon btn-outline-warning btn-icon-left btn-capsule">
+                        <span class="fa fa-arrow-left">
+                        </span> Back to Gallery Blog
+                    </a>
+                    
+                </div>
+            </section>
+            
+            <script src="../assets/js/footer.js"></script>
+        </main>
+        <!--  -->
+        <!--    JavaScripts-->
+        <!--    =============================================-->
+        <script src="../assets/lib/jquery/dist/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+        <script src="../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../assets/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+        <script src="../assets/js/core.js"></script>
+        <script src="../assets/js/main.js"></script>
+        <script src="../assets/lib/remodal/dist/remodal.js"></script>
+    </body>
+</html>
