@@ -52,16 +52,20 @@
                                     <div class="fa fa-clock-o fs-1 mr-2 color-3"></div>Dec 2018</div>
                                 <div class="col-4">
                                     <div class="fa fa-file-o fs-1 mr-2 color-3"></div>
-                                    <a href="../papers/08569485.pdf">Relevant Paper</a>
+                                    <a href="../papers/LagrangianBottlenecks.pdf">Relevant Paper</a>
                                 </div>
                                 
                             </div>
                             <img class="mb-4 radius-primary" src="../assets/images/experiments/bridge.jpeg">
-                            <p class="lead color-5">Inspired by the rapid decrease in lanes on the San Francisco-Oakland Bay Bridge, we study a bottleneck that merges from four lanes down to two to one.</p>
-                            <p>We demonstrate that the AVs are able to learn a strategy that increases the effective outflow at high inflows, and performs competitively with ramp metering.</p>
-                            
+                            <p class="lead color-5">Inspired by the rapid decrease in lanes on the San Francisco-Oakland Bay Bridge, we study a bottleneck, depicted in Fig. 1 that merges from four lanes down to two to one. We come up with a scheme that could save on the costs of deploying traffic light infrastructure by relying on freely available autonomous vehicles.</p>
+                            <figure>
+                                <img src="../assets/images/experiments/bottleneck_control.png" class="img-fluid result" alt="Bottleneck control design">
+                                <figcaption class="small text-center"> Fig. 1, a bottleneck in which four lanes go to two then to 1. Red vehicles are autonomous, white are human.  </figcaption>
+                              </figure>
+
+                            <p>In this system, too large of an inflow into the system leads to irreversible congestion. We demonstrate that we can increase the total flow rate of this system by using AVs. The AVs are able to learn a strategy similar to a traffic light, deciding which lanes go and whch stop. This increases the effective outflow at high inflows, and performs competitively with ramp metering, the solution that is currently deployed on the Bay Bridge. </p>
+                            <p>In the video below, we depict the effects of this congestion.</p>
                             <div style="margin-bottom: 40px;"> 
-                                <h3>Videos</h3>
 <!--
                                 <a href="https://www.youtube.com/watch?v=Z6QltFAEDeQ?rel=0" class="video-modal btn btn-icon btn-outline-primary btn-icon-left btn-capsule">
                                     <span class="fa fa-youtube">
@@ -75,31 +79,42 @@
                                     <span class="fa fa-youtube">
                                     </span> Play Video 3
                                 </a>
--->
-                                <a href="https://www.youtube.com/watch?v=taqJyMKzPkc&feature=youtu.be" class="video-modal btn btn-icon btn-outline-primary btn-icon-left btn-capsule">
-                                    <span class="fa fa-youtube">
-                                    </span> Aimsun Video 1
-                                </a>
+-->               
+                               <iframe width="560" height="315" src="https://www.youtube.com/embed/taqJyMKzPkc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
-                            
-                         
-                            
-                            
-                              <figure>
-                                <img src="../assets/images/experiments/bottleneck_control.png" class="img-fluid result" alt="Bottleneck control design">
-                                <figcaption class="small text-center"> Control structure of the bottleneck. Scale of segments are distorted for visualization. </figcaption>
-                              </figure>
+                            <p>The effects of congestion can be visualized in the following graphic, where we plot the number of entering vehicles per hour vs. the number of exiting vehicles per hour. As can be seen, the exiting number gradually increases but then sharply dips down.</p>
 
                             <figure>
                                 <img src="../assets/images/experiments/bottleneck_congestion.png" class="img-fluid result" alt="Bottleneck control design">
-                                <figcaption class="small text-center"> Without control, congestion rapidly forms in the bottleneck.</figcaption>
+                                <figcaption class="small text-center"> Entering vehicles/hour vs. exiting vehicles per hour. Around 1600 entering vehicles per hour, the exiting number begins to decrease.</figcaption>
                               </figure>
+
+                            <p>Now we convert 10% of the vehicles to AVs and let them choose their accelerations and actions. As you can see in the attached video, </p>
+                            <div style="margin-bottom: 40px;"> <!--
+                                <a href="https://www.youtube.com/watch?v=Z6QltFAEDeQ?rel=0" class="video-modal btn btn-icon btn-outline-primary btn-icon-left btn-capsule">
+                                    <span class="fa fa-youtube">
+                                    </span> Play Video 1
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=SoA_7fPJEG8?rel=0" class="video-modal btn btn-icon btn-outline-primary btn-icon-left btn-capsule">
+                                    <span class="fa fa-youtube">
+                                    </span> Play Video 2
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=5R6GWarVh2o?rel=0" class="video-modal btn btn-icon btn-outline-primary btn-icon-left btn-capsule">
+                                    <span class="fa fa-youtube">
+                                    </span> Play Video 3
+                                </a>
+-->
+                               <iframe width="560" height="315" src="https://www.youtube.com/embed/DQudwzFnW1Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            
+                            <p>Now we compare the entering vehicles/exiting vehicles curves with and without autonomous vehicles. The curves with 10% autonomous vehicles is depicted in yellow and the 0% autonomous vehicles i.e. the fully human case, is depicted in blue. At high inflows, we see a 25% improvement in the outflow. </p>
 
                             <figure>
                                 <img src="../assets/images/experiments/uncontrolVRLBigAxes.png" class="img-fluid result" alt="Bottleneck control design">
-                                <figcaption class="small text-center"> Control structure of the bottleneck; at high inflows the outflow is improved by 25%. </figcaption>
+                                <figcaption class="small text-center">Comparison of the inflow/outflow curves with and without control. </figcaption>
                               </figure>
 
+                            <p>For purposes of curiosity, we compare this with a ramp metering strategy in which we add a set of traffic lights at the entrance to the bottleneck. This is the currently deployed control strategy on the Bay Bridge. We see that the two perform comparably at high numbers of entering vehicles, but the traffic lights outperform at low inflows. However, in this low-inflow regime we would not actually apply control as this is before congestion sets in. Thus, we claim that the two schemes perform comparably. </p>
                             <figure>
                                 <img src="../assets/images/experiments/RLVAlineaBigAxes.png" class="img-fluid result" alt="Bottleneck control design">
                                 <figcaption class="small text-center"> Comparison of inflow, outflow curves for AV control vs. ramp metering. At high inflows they perform comparably. </figcaption>
